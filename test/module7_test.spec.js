@@ -1,4 +1,4 @@
-describe("Doctors Page Test Suite", () => {
+describe("Module 7: Advanced Configuration", () => {
 
   beforeEach(async () => {
     await browser.url("/showcase/angular/appointmentplanner/#/dashboard");
