@@ -1,12 +1,13 @@
 describe("Module 7: Advanced Configuration", () => {
-
   beforeEach(async () => {
     await browser.url("/showcase/angular/appointmentplanner/#/dashboard");
   });
 
   it("should open page", async () => {
     const pageTitle = await browser.getTitle();
-    expect(pageTitle).toEqual("Appointment Planner - Syncfusion Angular Components Showcase App");
+    expect(pageTitle).toEqual(
+      "Appointment Planner - Syncfusion Angular Components Showcase App"
+    );
   });
 
   it("should open modal", async () => {
@@ -30,7 +31,7 @@ describe("Module 7: Advanced Configuration", () => {
     const card = await $("#Specialist_8");
     await expect(card.$(".name")).toHaveTextContaining("John Doe");
     await expect(card.$(".education")).toHaveTextContaining("Basic", {
-      ignoreCase: true
+      ignoreCase: true,
     });
   });
 
@@ -41,5 +42,4 @@ describe("Module 7: Advanced Configuration", () => {
     await $(".button-container button.e-btn:not(.e-primary)").click();
     await expect($("#_dialog-content")).not.toBeDisplayed();
   });
-
 });
