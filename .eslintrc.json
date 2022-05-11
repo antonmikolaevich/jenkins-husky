@@ -23,5 +23,6 @@
     "func-names": "off",
     "no-shadow": "off",
     "no-param-reassign": "off"
-  }
+  },
+  "ignorePatterns": ["/module-9/service/*"]
 }
