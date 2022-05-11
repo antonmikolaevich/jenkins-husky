@@ -8,6 +8,8 @@ describe("Module 5: Advanced examples", () => {
     const childrenElement = await baseElement.$("#Specialist_1");
     // OR
     const element = await $(".specialist-display").$("#Specialist_1");
+    console.log(childrenElement);
+    console.log(element);
   });
 
   it("$$ command", async () => {
@@ -15,13 +17,17 @@ describe("Module 5: Advanced examples", () => {
     const childrenElements = await baseElement.$$("#Specialist_item");
     // OR
     const elements = await $(".specialist-display").$$("#Specialist_item");
+    console.log(childrenElements);
+    console.log(elements);
   });
 
   it("click command", async () => {
     // generally clicks the element
     // await $(".specialist-display").click();
     // clicks 20 horizontal pixels away from the center of the element
-    await $(".specialist-display").click({ x: 20 });
+    await $(".specialist-display").click({
+      x: 20,
+    });
     // clicks the right mouse button 30 vertical pixels away from the center of the element
     // await $(".specialist-display").click({button: 2, y: 30});
   });
@@ -50,13 +56,23 @@ describe("Module 5: Advanced examples", () => {
   });
 
   it("waitForDisplayed command", async () => {
-    await $(".specialist-display").waitForDisplayed({ timeout: 3000 }); // true
-    await $("#notVisible").waitForDisplayed({ timeout: 3000, interval: 1000 }); // error
+    await $(".specialist-display").waitForDisplayed({
+      timeout: 3000,
+    }); // true
+    await $("#notVisible").waitForDisplayed({
+      timeout: 3000,
+      interval: 1000,
+    }); // error
   });
 
   it("waitForExist command", async () => {
     await $(".specialist-display").waitForExist(); // true
-    await $("#notVisible").waitForExist({ timeout: 3000 }); // true
-    await $("#notExist").waitForExist({ timeout: 3000, interval: 1000 }); // error
+    await $("#notVisible").waitForExist({
+      timeout: 3000,
+    }); // true
+    await $("#notExist").waitForExist({
+      timeout: 3000,
+      interval: 1000,
+    }); // error
   });
 });

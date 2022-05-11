@@ -3,6 +3,8 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable object-shorthand */
 /* eslint-disable func-names */
+const { mkdirSync, existsSync } = require("fs");
+
 exports.config = {
   //
   // ====================
@@ -239,11 +241,19 @@ exports.config = {
     { error, result, duration, passed, retries }
   ) => {
     // take a screenshot anytime a test fails and throws an error
-    if (error !== undefined) {
+    if (error) {
       console.log(`Screenshot for the failed test ${test.title} is saved`);
-      const filename = test.title + ".png";
 
-      await browser.saveScreenshot("./errorShots/" + filename);
+      const filename = test.title + ".png";
+      const dirPath = "./artifacts/screenshots/";
+
+      if (!existsSync(dirPath)) {
+        mkdirSync(dirPath, {
+          recursive: true,
+        });
+      }
+
+      await browser.saveScreenshot(dirPath + filename);
     }
   },
 
