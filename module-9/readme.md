@@ -6,16 +6,18 @@ Go to the server folder and start the service
 
 ```
 $> cd server
+$> npm install
 $> npm start
 ```
 
 Service documentation can be found here: https://jsonplaceholder.typicode.com/guide/
 
-## Running server
+## Running tests
 
 Go to the main folder and start the service
 
 ```
+$> npm install
 $> npm test
 ```
 
