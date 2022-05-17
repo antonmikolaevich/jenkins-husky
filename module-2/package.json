@@ -1,0 +1,35 @@
+{
+  "name": "unit-testing-mocha-example",
+  "version": "1.0.0",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "type": "module",
+  "scripts": {
+    "test": "mocha",
+    "lint": "eslint ./ --fix",
+    "coverage": "c8 npm test",
+    "prepare": "husky install"
+  },
+  "author": "Matsvei.Murashka",
+  "license": "ISC",
+  "devDependencies": {
+    "c8": "^7.11.2",
+    "chai": "^4.3.6",
+    "eslint": "^8.14.0",
+    "eslint-config-google": "^0.14.0",
+    "husky": "^7.0.4",
+    "mocha": "^10.0.0",
+    "mochawesome": "^7.1.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stranger2626/unit-testing-mocha-example.git"
+  },
+  "bugs": {
+    "url": "https://github.com/stranger2626/unit-testing-mocha-example/issues"
+  },
+  "homepage": "https://github.com/stranger2626/unit-testing-mocha-example#readme",
+  "description": "a simple unit testing example using mocha"
+}
