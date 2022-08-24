@@ -1,4 +1,4 @@
-describe("Module 5: Advanced examples", () => {
+describe("Module 4: Basic Commands examples", () => {
   beforeEach(async () => {
     await browser.url("/showcase/angular/appointmentplanner/#/doctors");
   });
@@ -36,18 +36,18 @@ describe("Module 5: Advanced examples", () => {
     await $(".specialization-types button.e-control").click();
 
     await $("#Name input").setValue("John Doe");
-    await $("#Name input").getValue(); // John Doe
+    console.log("Value is: " + (await $("#Name input").getValue())); // John Doe
     await $("#Name input").setValue("Mr Robot");
-    await $("#Name input").getValue(); // Mr Robot
+    console.log("Value is: " + (await $("#Name input").getValue())); // Mr Robot
   });
 
   it("addValue command", async () => {
     await $(".specialization-types button.e-control").click();
 
     await $("input[name='Email']").addValue("test");
-    await $("input[name='Email']").getValue(); // test
+    console.log("Value is: " + (await $("input[name='Email']").getValue())); // test
     await $("input[name='Email']").addValue("@test.com");
-    await $("input[name='Email']").getValue(); // test@test.com
+    console.log("Value is: " + (await $("input[name='Email']").getValue())); // test@test.com
   });
 
   it("isExisting command", async () => {
@@ -58,21 +58,10 @@ describe("Module 5: Advanced examples", () => {
   it("waitForDisplayed command", async () => {
     await $(".specialist-display").waitForDisplayed({
       timeout: 3000,
-    }); // true
-    await $("#notVisible").waitForDisplayed({
-      timeout: 3000,
-      interval: 1000,
-    }); // error
+    });
   });
 
   it("waitForExist command", async () => {
     await $(".specialist-display").waitForExist(); // true
-    await $("#notVisible").waitForExist({
-      timeout: 3000,
-    }); // true
-    await $("#notExist").waitForExist({
-      timeout: 3000,
-      interval: 1000,
-    }); // error
   });
 });

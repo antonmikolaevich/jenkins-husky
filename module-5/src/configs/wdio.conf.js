@@ -1,3 +1,8 @@
+/* eslint-disable spaced-comment */
+/* eslint-disable prefer-template */
+/* eslint-disable no-unused-vars */
+/* eslint-disable object-shorthand */
+/* eslint-disable func-names */
 exports.config = {
   //
   // ====================
@@ -20,7 +25,7 @@ exports.config = {
   // then the current working directory is where your `package.json` resides, so `wdio`
   // will be called from there.
   //
-  specs: ["./src/features/**/*.feature"],
+  specs: ["./**/tests/*.spec.js"],
   // Patterns to exclude.
   exclude: [
     // 'path/to/excluded/files'
@@ -41,7 +46,7 @@ exports.config = {
   // and 30 processes will get spawned. The property handles how many capabilities
   // from the same test should run tests.
   //
-  maxInstances: 10,
+  maxInstances: 1,
   //
   // If you have trouble getting all important capabilities together, check out the
   // Sauce Labs platform configurator - a great tool to configure your capabilities:
@@ -49,17 +54,7 @@ exports.config = {
   //
   capabilities: [
     {
-      // maxInstances can get overwritten per capability. So if you have an in-house Selenium
-      // grid with only 5 firefox instances available you can make sure that not more than
-      // 5 instances get started at a time.
-      maxInstances: 5,
-      //
       browserName: "chrome",
-      acceptInsecureCerts: true,
-      // If outputDir is provided WebdriverIO can capture driver session logs
-      // it is possible to configure which logTypes to include/exclude.
-      // excludeDriverLogs: ['*'], // pass '*' to exclude all driver session logs
-      // excludeDriverLogs: ['bugreport', 'server'],
     },
   ],
   //
@@ -69,7 +64,7 @@ exports.config = {
   // Define all options that are relevant for the WebdriverIO instance here
   //
   // Level of logging verbosity: trace | debug | info | warn | error | silent
-  logLevel: "info",
+  logLevel: "error",
   //
   // Set specific log levels per logger
   // loggers:
@@ -109,7 +104,7 @@ exports.config = {
   // Services take over a specific job you don't want to take care of. They enhance
   // your test setup with almost no effort. Unlike plugins, they don't add new
   // commands. Instead, they hook themselves up into the test process.
-  services: ["devtools"],
+  services: ["chromedriver"],
 
   // Framework you want to run your specs with.
   // The following are supported: Mocha, Jasmine, and Cucumber
@@ -117,7 +112,7 @@ exports.config = {
   //
   // Make sure you have the wdio adapter package for the specific framework installed
   // before running any tests.
-  framework: "cucumber",
+  framework: "mocha",
   //
   // The number of times to retry the entire specfile when it fails as a whole
   // specFileRetries: 1,
@@ -131,35 +126,14 @@ exports.config = {
   // Test reporter for stdout.
   // The only one supported by default is 'dot'
   // see also: https://webdriver.io/docs/dot-reporter
-  reporters: ["spec"],
-
+  reporters: [],
   //
-  // If you are using Cucumber you need to specify the location of your step definitions.
-  cucumberOpts: {
-    // <string[]> (file/dir) require files before executing features
-    require: ["./src/step-definitions/*-steps.js"],
-    // <boolean> show full backtrace for errors
-    backtrace: false,
-    // <string[]> ("extension:module") require files with the given EXTENSION after requiring MODULE (repeatable)
-    requireModule: [],
-    // <boolean> invoke formatters without executing steps
-    dryRun: false,
-    // <boolean> abort the run on first failure
-    failFast: false,
-    // <boolean> hide step definition snippets for pending steps
-    snippets: true,
-    // <boolean> hide source uris
-    source: true,
-    // <boolean> fail if there are any undefined or pending steps
-    strict: false,
-    // <string> (expression) only execute the features or scenarios with tags matching the expression
-    tagExpression: "",
-    // <number> timeout for step definitions
+  // Options to be passed to Mocha.
+  // See the full list at http://mochajs.org/
+  mochaOpts: {
+    ui: "bdd",
     timeout: 60000,
-    // <boolean> Enable this config to treat undefined definitions as warnings.
-    ignoreUndefinedDefinitions: false,
   },
-
   //
   // =====
   // Hooks
@@ -181,19 +155,10 @@ exports.config = {
    * @param  {String} cid      capability id (e.g 0-0)
    * @param  {[type]} caps     object containing capabilities for session that will be spawn in the worker
    * @param  {[type]} specs    specs to be run in the worker process
-   * @param  {[type]} args     object that will be merged with the main configuration once worker is initialized
+   * @param  {[type]} args     object that will be merged with the main configuration once worker is initialised
    * @param  {[type]} execArgv list of string arguments passed to the worker process
    */
   // onWorkerStart: function (cid, caps, specs, args, execArgv) {
-  // },
-  /**
-   * Gets executed just after a worker process has exited.
-   * @param  {String} cid      capability id (e.g 0-0)
-   * @param  {Number} exitCode 0 - success, 1 - fail
-   * @param  {[type]} specs    specs to be run in the worker process
-   * @param  {Number} retries  number of retries used
-   */
-  // onWorkerEnd: function (cid, exitCode, specs, retries) {
   // },
   /**
    * Gets executed just before initialising the webdriver session and test framework. It allows you
@@ -222,65 +187,44 @@ exports.config = {
   // beforeCommand: function (commandName, args) {
   // },
   /**
-   * Cucumber Hooks
-   *
-   * Runs before a Cucumber Feature.
-   * @param {String}                   uri      path to feature file
-   * @param {GherkinDocument.IFeature} feature  Cucumber feature object
+   * Hook that gets executed before the suite starts
+   * @param {Object} suite suite details
    */
-  // beforeFeature: function (uri, feature) {
+  // beforeSuite: function (suite) {
   // },
   /**
-   *
-   * Runs before a Cucumber Scenario.
-   * @param {ITestCaseHookParameter} world    world object containing information on pickle and test step
-   * @param {Object}                 context  Cucumber World object
+   * Function to be executed before a test (in Mocha/Jasmine) starts.
    */
-  // beforeScenario: function (world, context) {
+  // beforeTest: function (test, context) {
   // },
   /**
-   *
-   * Runs before a Cucumber Step.
-   * @param {Pickle.IPickleStep} step     step data
-   * @param {IPickle}            scenario scenario pickle
-   * @param {Object}             context  Cucumber World object
+   * Hook that gets executed _before_ a hook within the suite starts (e.g. runs before calling
+   * beforeEach in Mocha)
    */
-  // beforeStep: function (step, scenario, context) {
+  // beforeHook: function (test, context) {
   // },
   /**
-   *
-   * Runs after a Cucumber Step.
-   * @param {Pickle.IPickleStep} step             step data
-   * @param {IPickle}            scenario         scenario pickle
-   * @param {Object}             result           results object containing scenario results
-   * @param {boolean}            result.passed    true if scenario has passed
-   * @param {string}             result.error     error stack if scenario failed
-   * @param {number}             result.duration  duration of scenario in milliseconds
-   * @param {Object}             context          Cucumber World object
+   * Hook that gets executed _after_ a hook within the suite starts (e.g. runs after calling
+   * afterEach in Mocha)
    */
-  // afterStep: function (step, scenario, result, context) {
+  // afterHook: function (test, context, { error, result, duration, passed, retries }) {
   // },
   /**
+   * Function to be executed after a test (in Mocha/Jasmine only)
+   * @param {Object}  test             test object
+   * @param {Object}  context          scope object the test was executed with
+   * @param {Error}   result.error     error object in case the test fails, otherwise `undefined`
+   * @param {Any}     result.result    return object of test function
+   * @param {Number}  result.duration  duration of test
+   * @param {Boolean} result.passed    true if test has passed, otherwise false
+   * @param {Object}  result.retries   informations to spec related retries, e.g. `{ attempts: 0, limit: 0 }`
    *
-   * Runs after a Cucumber Scenario.
-   * @param {ITestCaseHookParameter} world            world object containing information on pickle and test step
-   * @param {Object}                 result           results object containing scenario results
-   * @param {boolean}                result.passed    true if scenario has passed
-   * @param {string}                 result.error     error stack if scenario failed
-   * @param {number}                 result.duration  duration of scenario in milliseconds
-   * @param {Object}                 context          Cucumber World object
-   */
-  // afterScenario: function (world, result, context) {
-  // },
   /**
-   *
-   * Runs after a Cucumber Feature.
-   * @param {String}                   uri      path to feature file
-   * @param {GherkinDocument.IFeature} feature  Cucumber feature object
+   * Hook that gets executed after the suite has ended
+   * @param {Object} suite suite details
    */
-  // afterFeature: function (uri, feature) {
+  // afterSuite: function (suite) {
   // },
-
   /**
    * Runs after a WebdriverIO command gets executed
    * @param {String} commandName hook command name
@@ -322,6 +266,6 @@ exports.config = {
    * @param {String} oldSessionId session ID of the old session
    * @param {String} newSessionId session ID of the new session
    */
-  // onReload: function(oldSessionId, newSessionId) {
-  // }
+  //onReload: function(oldSessionId, newSessionId) {
+  //}
 };
