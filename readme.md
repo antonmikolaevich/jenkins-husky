@@ -1,6 +1,7 @@
 # Automated Testing (JavaScript) Mentoring program [Basic]
 
 ## Preconditions:
+
 Learn or refresh your JavaScript knowledge in the scope of the course: https://learn.epam.com/detailsPage?id=7d7a6aa7-ac49-45e1-b3b2-2eca5a89cfa9&source=PROGRAM  
 Refresh your knowledge about Git: https://learn.epam.com/detailsPage?id=16d7f2e7-cc80-4870-928e-400723f732bb
 
@@ -8,7 +9,7 @@ Refresh your knowledge about Git: https://learn.epam.com/detailsPage?id=16d7f2e7
 
 [Description](#description)  
 [Installation](#installation)
-[Instruction](#instruction)   
+[Instruction](#instruction)  
 [Module 1: Introduction into JavaScript Automated Testing](#module_1)  
 [Module 2: Unit Testing in JavaScript](#module_2)  
 [Module 3: WebdriverIO: Locators](#module_3)  
@@ -18,13 +19,14 @@ Refresh your knowledge about Git: https://learn.epam.com/detailsPage?id=16d7f2e7
 [Module 7: WebdriverIO: Advanced Configuration](#module_7)
 [Module 8: BDD in Automated Testing with JavaScript](#module_8)
 [Module 9: API Testing in JavaScript](#module_9)
-[Module 10: Continious Integration](#module_10)
+[Module 10: Continuous Integration](#module_10)
 [Contact list](#contacts)
 [License](#license)
 
 <a name="description"/>
 
 ## Description
+
 This is a repository with useful materials and code samples for Automated Testing (JavaScript) Mentoring program [Basic]
 
 <a name="installation"/>
@@ -105,17 +107,18 @@ NPM version - 8 (with `lockfileVersion: 2`)
 
 <a name="module_10"/>
 
-#### Module 10: Continious Integration
+#### Module 10: Continuous Integration
 
 1. Course link: https://learn.epam.com/detailsPage?id=59bdf234-6664-4f38-a9c5-6689edd6f8d4
 
 ## Contact list
 
 For all questions please contact:
-- Dzmitry_Shaplyka@epam.com   
-- Oleksandr_Halichenko@epam.com 
-- Matsvei_Murashka@epam.com  
-- Andrei_Dzeichyk@epam.com 
+
+- Dzmitry_Shaplyka@epam.com
+- Oleksandr_Halichenko@epam.com
+- Matsvei_Murashka@epam.com
+- Andrei_Dzeichyk@epam.com
 
 <a name="license"/>
 
