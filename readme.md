@@ -60,6 +60,7 @@ NPM version - 8 (with `lockfileVersion: 2`)
 ## Module 2: Unit Testing in JavaScript
 
 1. Video Materials: https://videoportal.epam.com/playlist/e734QnaA/play/RY5g9p7o
+1. Home Task: https://git.epam.com/Dzmitry_Shaplyka/js-atm-program/-/blob/master/module-2/readme.md#task
 
 ## WebdriverIO
 
@@ -68,48 +69,56 @@ NPM version - 8 (with `lockfileVersion: 2`)
 #### Module 3: WebdriverIO: Locators
 
 1. Video Materials: https://videoportal.epam.com/playlist/jaNXoQJ6/play/mYREyEaW
+1. Home Task: https://git.epam.com/Dzmitry_Shaplyka/js-atm-program/-/blob/master/module-3/readme.md#task
 
 <a name="module_4"/>
 
 #### Module 4: WebdriverIO: Basic Commands
 
 1. Video Materials: https://videoportal.epam.com/playlist/mYQXlZap/play/kaE5mEae
+1. Home Task: https://git.epam.com/Dzmitry_Shaplyka/js-atm-program/-/blob/master/module-4/readme.md#task
 
 <a name="module_5"/>
 
 #### Module 5: WebdriverIO: Advanced Commands
 
 1. Video Materials: https://videoportal.epam.com/playlist/67KQRmYV/play/dYPlEDY2
+1. Home Task: https://git.epam.com/Dzmitry_Shaplyka/js-atm-program/-/blob/master/module-5/readme.md#task
 
 <a name="module_6"/>
 
 #### Module 6: WebdriverIO: Page Object Model
 
 1. Video Materials: https://videoportal.epam.com/playlist/RYpzxA7y/play/ZaAkAxJN
+1. Home Task: https://git.epam.com/Dzmitry_Shaplyka/js-atm-program/-/blob/master/module-6/readme.md#task
 
 <a name="module_7"/>
 
 #### Module 7: WebdriverIO: Advanced Configuration
 
 1. Video Materials: https://videoportal.epam.com/playlist/Q7zR2D7M/play/RYpxyAYy
+1. Home Task: https://git.epam.com/Dzmitry_Shaplyka/js-atm-program/-/blob/master/module-7/readme.md#task
 
 <a name="module_8"/>
 
 #### Module 8: BDD in Automated Testing with JavaScript
 
 1. Video Materials: https://videoportal.epam.com/playlist/wY9yLmYy/play/L7x0xB74
+1. Home Task: https://git.epam.com/Dzmitry_Shaplyka/js-atm-program/-/blob/master/module-8/readme.md#task
 
 <a name="module_9"/>
 
 #### Module 9: API Testing in JavaScript
 
 1. Video Materials: https://videoportal.epam.com/playlist/dYoKWjY3/play/VYGGmxYv
+1. Home Task: https://git.epam.com/Dzmitry_Shaplyka/js-atm-program/-/blob/master/module-9/readme.md#task
 
 <a name="module_10"/>
 
 #### Module 10: Continuous Integration
 
 1. Course link: https://learn.epam.com/detailsPage?id=59bdf234-6664-4f38-a9c5-6689edd6f8d4
+1. Home task: setup automatic jobs to run your UI / Unit / API tests
 
 ## Contact list
 

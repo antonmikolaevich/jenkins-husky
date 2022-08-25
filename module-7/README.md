@@ -1,0 +1,11 @@
+## Task
+
+1. Add Junit reporter to your TAF
+1. Save screenshots in case of failed test scenarios
+1. Make it possible to run your tests on Firefox browser
+
+#### Acceptance Criteria
+
+1. Junit reporter is added
+1. Screenshots for the failed tests are saved
+1. Tests are run on Firefox browser
