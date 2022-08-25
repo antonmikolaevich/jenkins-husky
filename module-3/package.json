@@ -1,0 +1,12 @@
+{
+  "name": "module-3",
+  "version": "1.0.0",
+  "description": "Module-3: WebdriverIO. Locators",
+  "main": "module3_test.spec.js",
+  "scripts": {
+    "wdio": "wdio run ./src/configs/wdio.conf.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
