@@ -1,4 +1,5 @@
-const { When, Given } = require("@wdio/cucumber-framework");
+/* eslint-disable import/no-extraneous-dependencies */
+const { When } = require("@wdio/cucumber-framework");
 const { page } = require("../po");
 
 When("I open {string} page", function (pageName) {

@@ -1,3 +1,4 @@
+/* eslint-disable import/no-extraneous-dependencies */
 const { Then } = require("@wdio/cucumber-framework");
 const compareText = require("./utils/compare-text");
 

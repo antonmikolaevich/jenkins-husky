@@ -2,6 +2,9 @@
   "name": "service-testing",
   "version": "1.0.0",
   "description": "TAF for API testing",
+  "workspaces": [
+    "service"
+  ],
   "scripts": {
     "test": "mocha"
   },
@@ -11,9 +14,9 @@
   "author": "Dzmitry_Shaplyka@epam.com",
   "license": "EPAM Systems",
   "dependencies": {
-    "axios": "^0.26.1",
+    "axios": "^0.27.2",
     "chai": "^4.3.6",
-    "mocha": "^9.2.2",
+    "mocha": "^10.0.0",
     "mochawesome": "^7.1.3"
   }
 }
