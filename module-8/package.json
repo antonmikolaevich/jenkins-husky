@@ -7,9 +7,5 @@
     "test": "wdio run ./src/configs/wdio.conf.js"
   },
   "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "@wdio/cucumber-framework": "^7.23.0",
-    "@wdio/devtools-service": "^7.23.0"
-  }
+  "license": "ISC"
 }

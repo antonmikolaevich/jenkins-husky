@@ -2,9 +2,6 @@
   "name": "service-testing",
   "version": "1.0.0",
   "description": "TAF for API testing",
-  "workspaces": [
-    "service"
-  ],
   "scripts": {
     "test": "mocha"
   },
