@@ -3,14 +3,7 @@ describe("Module 3: WebdriverIO Introduction", () => {
     await browser.url("/showcase/angular/appointmentplanner/#/dashboard");
   });
 
-  // it("test", async () => {
-  //   const addNewDoctorButton = await $(
-  //     ".specialization-types button.e-control"
-  //   );
-  //   const doctorCards = await $$(".e-cards.specialist-item");
-  // });
-
-  it("second test", async () => {
+  it("first test", async () => {
     const doctorsButton = await $("div[routerLink='/doctors']");
     const addNewDoctorButton = await $(
       ".specialization-types button.e-control"

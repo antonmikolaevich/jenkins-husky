@@ -1,0 +1,11 @@
+{
+  "name": "module-5",
+  "version": "1.0.0",
+  "description": "Module-5: Advanced WDIO Commands",
+  "scripts": {
+    "wdio": "wdio run ./src/configs/wdio.conf.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

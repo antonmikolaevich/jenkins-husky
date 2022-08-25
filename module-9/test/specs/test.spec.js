@@ -11,7 +11,7 @@ describe("API Test Suite", () => {
     expect(response.data[0].id).to.equal(1);
   });
 
-  it("should get() single post", async () => {
+  it("should get() a single post", async () => {
     const response = await sendRequest("posts/1");
 
     expect(response.status).to.equal(200);

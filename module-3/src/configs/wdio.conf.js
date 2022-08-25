@@ -3,8 +3,6 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable object-shorthand */
 /* eslint-disable func-names */
-const { mkdirSync, existsSync } = require("fs");
-
 exports.config = {
   //
   // ====================
@@ -27,7 +25,7 @@ exports.config = {
   // then the current working directory is where your `package.json` resides, so `wdio`
   // will be called from there.
   //
-  specs: ["./**/module3_test.spec.js"],
+  specs: ["./**/tests/module3_test.spec.js"],
   // Patterns to exclude.
   exclude: [
     // 'path/to/excluded/files'
@@ -55,9 +53,6 @@ exports.config = {
   // https://saucelabs.com/platform/platform-configurator
   //
   capabilities: [
-    {
-      browserName: "firefox",
-    },
     {
       browserName: "chrome",
     },
@@ -109,7 +104,7 @@ exports.config = {
   // Services take over a specific job you don't want to take care of. They enhance
   // your test setup with almost no effort. Unlike plugins, they don't add new
   // commands. Instead, they hook themselves up into the test process.
-  services: ["chromedriver", "geckodriver"],
+  services: ["chromedriver"],
 
   // Framework you want to run your specs with.
   // The following are supported: Mocha, Jasmine, and Cucumber
@@ -131,18 +126,7 @@ exports.config = {
   // Test reporter for stdout.
   // The only one supported by default is 'dot'
   // see also: https://webdriver.io/docs/dot-reporter
-  reporters: [
-    "spec",
-    [
-      "junit",
-      {
-        outputDir: "./report",
-        outputFileFormat: function (options) {
-          return `results-${options.cid}.xml`;
-        },
-      },
-    ],
-  ],
+  reporters: [],
   //
   // Options to be passed to Mocha.
   // See the full list at http://mochajs.org/
@@ -235,28 +219,32 @@ exports.config = {
    * @param {Boolean} result.passed    true if test has passed, otherwise false
    * @param {Object}  result.retries   informations to spec related retries, e.g. `{ attempts: 0, limit: 0 }`
    */
-  afterTest: async (
-    test,
-    context,
-    { error, result, duration, passed, retries }
-  ) => {
-    // take a screenshot anytime a test fails and throws an error
-    if (error) {
-      console.log(`Screenshot for the failed test ${test.title} is saved`);
+  // afterTest: async (
+  //   test,
+  //   context, {
+  //     error,
+  //     result,
+  //     duration,
+  //     passed,
+  //     retries
+  //   }
+  // ) => {
+  //   // take a screenshot anytime a test fails and throws an error
+  //   if (error) {
+  //     console.log(`Screenshot for the failed test ${test.title} is saved`);
 
-      const filename = test.title + ".png";
-      const dirPath = "./artifacts/screenshots/";
+  //     const filename = test.title + ".png";
+  //     const dirPath = "./artifacts/screenshots/";
 
-      if (!existsSync(dirPath)) {
-        mkdirSync(dirPath, {
-          recursive: true,
-        });
-      }
+  //     if (!existsSync(dirPath)) {
+  //       mkdirSync(dirPath, {
+  //         recursive: true,
+  //       });
+  //     }
 
-      await browser.saveScreenshot(dirPath + filename);
-    }
-  },
-
+  //     await browser.saveScreenshot(dirPath + filename);
+  //   }
+  // },
   /**
    * Hook that gets executed after the suite has ended
    * @param {Object} suite suite details
