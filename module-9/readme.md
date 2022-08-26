@@ -14,7 +14,7 @@ Service documentation can be found here: https://jsonplaceholder.typicode.com/gu
 
 ## Running tests
 
-Go to the main folder and start the service
+Go to the main folder (module-9) and start the service
 
 ```
 $> npm install
@@ -23,7 +23,8 @@ $> npm test
 
 ## Task
 
-Write test scenarios to test each of CRUD operations:
+Take an API service or choose the default one (https://jsonplaceholder.typicode.com/guide/)
+and write test scenarios to test each of CRUD operations:
 
 - Create (using post() method);
 - Read (using get() method): list all resources / get a resource / filter resources;

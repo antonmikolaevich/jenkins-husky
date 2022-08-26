@@ -1,4 +1,6 @@
-const { sendRequest } = require("../helpers/api.helper");
+const {
+  sendRequest
+} = require("../helpers/api.helper");
 const testData = require("../config/data.json");
 
 describe("API Test Suite", () => {
@@ -9,13 +11,6 @@ describe("API Test Suite", () => {
 
     expect(response.status).to.equal(200);
     expect(response.data[0].id).to.equal(1);
-  });
-
-  it("should get() a single post", async () => {
-    const response = await sendRequest("posts/1");
-
-    expect(response.status).to.equal(200);
-    expect(response.data.id).to.equal(1);
   });
 
   it("should create a post using post() method", async () => {
@@ -29,10 +24,4 @@ describe("API Test Suite", () => {
     expect(post.data.id).to.equal(postId);
   });
 
-  it("should delete() a post", async () => {
-    await sendRequest(`posts/${postId}`, {}, "delete");
-    const res = await sendRequest(`posts/${postId}`);
-
-    expect(res.status).to.equal(404);
-  });
 });
