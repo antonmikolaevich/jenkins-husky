@@ -1,6 +1,4 @@
-const {
-  sendRequest
-} = require("../helpers/api.helper");
+const { sendRequest } = require("../helpers/api.helper");
 const testData = require("../config/data.json");
 
 describe("API Test Suite", () => {
@@ -23,5 +21,4 @@ describe("API Test Suite", () => {
     expect(post.status).to.equal(200);
     expect(post.data.id).to.equal(postId);
   });
-
 });
