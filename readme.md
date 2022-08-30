@@ -123,7 +123,7 @@ NPM version - 8 (with `lockfileVersion: 2`)
 
 ## Contact list
 
-For all questions please contact:
+In case of any questions please contact:
 
 - Dzmitry_Shaplyka@epam.com
 - Oleksandr_Halichenko@epam.com
