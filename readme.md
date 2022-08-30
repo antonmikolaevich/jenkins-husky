@@ -8,7 +8,7 @@ Refresh your knowledge about Git: https://learn.epam.com/detailsPage?id=16d7f2e7
 ##### Table of Contents
 
 [Description](#description)  
-[Installation](#installation)
+[Installation](#installation)   
 [Instruction](#instruction)  
 [Module 1: Introduction into JavaScript Automated Testing](#module_1)  
 [Module 2: Unit Testing in JavaScript](#module_2)  
@@ -46,7 +46,7 @@ NPM version - 8 (with `lockfileVersion: 2`)
 
 ```sh
 1. cd <module_folder> eg: cd module_3
-2. nom run wdio -> run test examples related to chosen module
+2. npm run wdio -> run test examples related to chosen module
 ```
 
 <a name="module_1"/>
@@ -61,7 +61,7 @@ NPM version - 8 (with `lockfileVersion: 2`)
 ## Module 2: Unit Testing in JavaScript
 
 1. Video Materials: https://videoportal.epam.com/playlist/e734QnaA/play/RY5g9p7o
-1. Home Task: https://git.epam.com/Dzmitry_Shaplyka/js-atm-program/-/blob/master/module-2/readme.md#task
+1. Home Task: https://git.epam.com/Dzmitry_Shaplyka/js-atm-program/-/blob/master/module-2/README.md#task
 
 ## WebdriverIO
 
@@ -70,21 +70,21 @@ NPM version - 8 (with `lockfileVersion: 2`)
 #### Module 3: WebdriverIO: Locators
 
 1. Video Materials: https://videoportal.epam.com/playlist/jaNXoQJ6/play/mYREyEaW
-1. Home Task: https://git.epam.com/Dzmitry_Shaplyka/js-atm-program/-/blob/master/module-3/readme.md#task
+1. Home Task: https://git.epam.com/Dzmitry_Shaplyka/js-atm-program/-/blob/master/module-3/README.md#task
 
 <a name="module_4"/>
 
 #### Module 4: WebdriverIO: Basic Commands
 
 1. Video Materials: https://videoportal.epam.com/playlist/mYQXlZap/play/kaE5mEae
-1. Home Task: https://git.epam.com/Dzmitry_Shaplyka/js-atm-program/-/blob/master/module-4/readme.md#task
+1. Home Task: https://git.epam.com/Dzmitry_Shaplyka/js-atm-program/-/blob/master/module-4/README.md#task
 
 <a name="module_5"/>
 
 #### Module 5: WebdriverIO: Advanced Commands
 
 1. Video Materials: https://videoportal.epam.com/playlist/67KQRmYV/play/dYPlEDY2
-1. Home Task: https://git.epam.com/Dzmitry_Shaplyka/js-atm-program/-/blob/master/module-5/readme.md#task
+1. Home Task: https://git.epam.com/Dzmitry_Shaplyka/js-atm-program/-/blob/master/module-5/README.md#task
 
 <a name="module_6"/>
 
@@ -98,14 +98,14 @@ NPM version - 8 (with `lockfileVersion: 2`)
 #### Module 7: WebdriverIO: Advanced Configuration
 
 1. Video Materials: https://videoportal.epam.com/playlist/Q7zR2D7M/play/RYpxyAYy
-1. Home Task: https://git.epam.com/Dzmitry_Shaplyka/js-atm-program/-/blob/master/module-7/readme.md#task
+1. Home Task: https://git.epam.com/Dzmitry_Shaplyka/js-atm-program/-/blob/master/module-7/README.md#task
 
 <a name="module_8"/>
 
 #### Module 8: BDD in Automated Testing with JavaScript
 
 1. Video Materials: https://videoportal.epam.com/playlist/wY9yLmYy/play/L7x0xB74
-1. Home Task: https://git.epam.com/Dzmitry_Shaplyka/js-atm-program/-/blob/master/module-8/readme.md#task
+1. Home Task: https://git.epam.com/Dzmitry_Shaplyka/js-atm-program/-/blob/master/module-8/README.md#task
 
 <a name="module_9"/>
 
