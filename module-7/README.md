@@ -1,3 +1,5 @@
+# Module 7: WebdriverIO: Advanced Configuration
+
 ## Task
 
 1. Add Junit reporter to your TAF

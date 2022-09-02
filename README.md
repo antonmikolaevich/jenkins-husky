@@ -8,7 +8,7 @@ Refresh your knowledge about Git: https://learn.epam.com/detailsPage?id=16d7f2e7
 ##### Table of Contents
 
 [Description](#description)  
-[Installation](#installation)   
+[Installation](#installation)  
 [Instruction](#instruction)  
 [Module 1: Introduction into JavaScript Automated Testing](#module_1)  
 [Module 2: Unit Testing in JavaScript](#module_2)  
@@ -33,11 +33,11 @@ This is a repository with useful materials and code samples for Automated Testin
 
 ## Installation
 
-Node version - 16.13.x (latest stable)
-NPM version - 8 (with `lockfileVersion: 2`)
+- Node version - 16.x (latest stable)
+  - NPM version - 8 (with `lockfileVersion: 2`)
 
 ```sh
-1. npm i
+$> npm i
 ```
 
 <a name="instruction"/>
@@ -45,8 +45,8 @@ NPM version - 8 (with `lockfileVersion: 2`)
 ## Instruction
 
 ```sh
-1. cd <module_folder> eg: cd module_3
-2. npm run wdio -> run test examples related to chosen module
+$> cd <module_folder> eg: cd module_3
+$> npm test -> run test examples related to chosen module
 ```
 
 <a name="module_1"/>

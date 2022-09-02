@@ -1,16 +1,16 @@
-const fs = require("fs");
-const path = require("path");
-const request = require("request");
-const low = require("lowdb");
-const FileAsync = require("lowdb/adapters/FileAsync");
-const Memory = require("lowdb/adapters/Memory");
-const is = require("./is");
-const chalk = require("chalk");
+const fs = require('fs');
+const path = require('path');
+const request = require('request');
+const low = require('lowdb');
+const FileAsync = require('lowdb/adapters/FileAsync');
+const Memory = require('lowdb/adapters/Memory');
+const is = require('./is');
+const chalk = require('chalk');
 
 const example = {
-  posts: [{ id: 1, title: "json-server", author: "typicode" }],
-  comments: [{ id: 1, body: "some comment", postId: 1 }],
-  profile: { name: "typicode" },
+  posts: [{ id: 1, title: 'json-server', author: 'typicode' }],
+  comments: [{ id: 1, body: 'some comment', postId: 1 }],
+  profile: { name: 'typicode' },
 };
 
 module.exports = function (source) {
@@ -18,9 +18,7 @@ module.exports = function (source) {
     if (is.FILE(source)) {
       if (!fs.existsSync(source)) {
         console.log(chalk.yellow(`  Oops, ${source} doesn't seem to exist`));
-        console.log(
-          chalk.yellow(`  Creating ${source} with some default data`)
-        );
+        console.log(chalk.yellow(`  Creating ${source} with some default data`));
         console.log();
         fs.writeFileSync(source, JSON.stringify(example, null, 2));
       }
@@ -43,10 +41,8 @@ module.exports = function (source) {
       delete require.cache[filename];
       const dataFn = require(filename);
 
-      if (typeof dataFn !== "function") {
-        throw new Error(
-          "The database is a JavaScript file but the export is not a function."
-        );
+      if (typeof dataFn !== 'function') {
+        throw new Error('The database is a JavaScript file but the export is not a function.');
       }
 
       // Run dataFn to generate data

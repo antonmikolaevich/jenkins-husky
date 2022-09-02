@@ -1,11 +1,13 @@
 {
-  "name": "bdd_po_example",
-  "version": "0.1.0",
-  "description": "",
-  "main": "index.js",
+  "name": "module-8",
+  "version": "1.0.0",
+  "description": "Module 8: BDD in Automated Testing with JavaScript",
+  "license": "EPAM Systems",
+  "private": true,
   "scripts": {
     "test": "wdio run ./src/configs/wdio.conf.js"
   },
-  "author": "",
-  "license": "ISC"
+  "dependencies": {
+    "@wdio/cucumber-framework": "^7.23.0"
+  }
 }

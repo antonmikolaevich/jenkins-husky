@@ -24,6 +24,16 @@
       "title": "my test title",
       "author": "my test body",
       "id": 5
+    },
+    {
+      "title": "my test title",
+      "author": "my test body",
+      "id": 6
+    },
+    {
+      "title": "my test title",
+      "author": "my test body",
+      "id": 7
     }
   ],
   "comments": [

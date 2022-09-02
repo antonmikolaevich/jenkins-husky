@@ -1,16 +1,13 @@
 {
   "name": "json-server",
-  "version": "0.16.1",
+  "version": "1.0.0",
   "description": "json server",
-  "main": "./lib/server/index.js",
-  "bin": "./lib/cli/bin.js",
+  "license": "EPAM Systems",
+  "private": true,
   "scripts": {
-    "test": "",
     "start": "babel-node -- src/cli/bin db.json -r routes.json",
     "build": "babel src -d lib",
-    "toc": "markdown-toc -i README.md",
-    "postversion": "git push && git push --tags",
-    "prepublishOnly": "npm test && npm run build && pkg-ok"
+    "toc": "markdown-toc -i README.md"
   },
   "dependencies": {
     "body-parser": "^1.19.0",
@@ -41,7 +38,6 @@
     "@babel/node": "^7.8.4",
     "@babel/preset-env": "^7.8.4",
     "cross-env": "^7.0.0",
-    "husky": "^4.2.1",
     "markdown-toc": "^1.2.0",
     "mkdirp": "^1.0.3",
     "npm-run-all": "^4.1.5",
@@ -52,8 +48,7 @@
     "supertest": "^4.0.2",
     "temp-write": "^4.0.0"
   },
-  "license": "MIT",
   "engines": {
-    "node": ">=10"
+    "node": ">=16.0.0 < 17.0.0"
   }
 }

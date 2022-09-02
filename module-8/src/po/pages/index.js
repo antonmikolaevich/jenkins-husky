@@ -1,5 +1,5 @@
-const DashboardPage = require("./dashboard.page");
-const DoctorsPage = require("./doctors.page");
+const DashboardPage = require('./dashboard.page');
+const DoctorsPage = require('./doctors.page');
 
 /**
  * @param name {'dashboard' | 'doctors'}

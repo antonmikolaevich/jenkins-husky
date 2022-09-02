@@ -1,8 +1,7 @@
-/* eslint-disable import/no-extraneous-dependencies */
-const { When } = require("@wdio/cucumber-framework");
-const { page } = require("../po");
+const { When } = require('@wdio/cucumber-framework');
+const { page } = require('../po');
 
-When("I open {string} page", function (pageName) {
+When('I open {string} page', function (pageName) {
   return page(pageName).open();
 });
 
@@ -10,7 +9,7 @@ When("I open {string} page", function (pageName) {
 //   return page(pageName).open();
 // });
 
-When("I wait {int} seconds", function (timeToWaitInSeconds) {
+When('I wait {int} seconds', function (timeToWaitInSeconds) {
   return browser.pause(timeToWaitInSeconds * 1000);
 });
 

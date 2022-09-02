@@ -1,12 +1,12 @@
-const BaseComponent = require("./base.component");
+const BaseComponent = require('./base.component');
 
 class SideMenuComponent extends BaseComponent {
   constructor() {
-    super("#plannerSiderBar");
+    super('#plannerSiderBar');
   }
 
   get name() {
-    return this.rootEl.$("p.name");
+    return this.rootEl.$('p.name');
   }
 
   /**

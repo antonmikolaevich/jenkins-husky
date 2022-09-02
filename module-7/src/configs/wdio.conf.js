@@ -1,9 +1,4 @@
-/* eslint-disable spaced-comment */
-/* eslint-disable prefer-template */
-/* eslint-disable no-unused-vars */
-/* eslint-disable object-shorthand */
-/* eslint-disable func-names */
-const { mkdirSync, existsSync } = require("fs");
+const { mkdirSync, existsSync } = require('fs');
 
 exports.config = {
   //
@@ -27,7 +22,7 @@ exports.config = {
   // then the current working directory is where your `package.json` resides, so `wdio`
   // will be called from there.
   //
-  specs: ["./**/tests/module7_test.spec.js"],
+  specs: ['./**/tests/**.test.js'],
   // Patterns to exclude.
   exclude: [
     // 'path/to/excluded/files'
@@ -56,10 +51,10 @@ exports.config = {
   //
   capabilities: [
     {
-      browserName: "firefox",
+      browserName: 'firefox',
     },
     {
-      browserName: "chrome",
+      browserName: 'chrome',
     },
   ],
   //
@@ -69,7 +64,7 @@ exports.config = {
   // Define all options that are relevant for the WebdriverIO instance here
   //
   // Level of logging verbosity: trace | debug | info | warn | error | silent
-  logLevel: "error",
+  logLevel: 'error',
   //
   // Set specific log levels per logger
   // loggers:
@@ -93,7 +88,7 @@ exports.config = {
   // with `/`, the base url gets prepended, not including the path portion of your baseUrl.
   // If your `url` parameter starts without a scheme or `/` (like `some/path`), the base url
   // gets prepended directly.
-  baseUrl: "https://ej2.syncfusion.com/",
+  baseUrl: 'https://ej2.syncfusion.com/',
   //
   // Default timeout for all waitFor* commands.
   waitforTimeout: 10000,
@@ -109,7 +104,7 @@ exports.config = {
   // Services take over a specific job you don't want to take care of. They enhance
   // your test setup with almost no effort. Unlike plugins, they don't add new
   // commands. Instead, they hook themselves up into the test process.
-  services: ["chromedriver", "geckodriver"],
+  services: ['chromedriver', 'geckodriver'],
 
   // Framework you want to run your specs with.
   // The following are supported: Mocha, Jasmine, and Cucumber
@@ -117,7 +112,7 @@ exports.config = {
   //
   // Make sure you have the wdio adapter package for the specific framework installed
   // before running any tests.
-  framework: "mocha",
+  framework: 'mocha',
   //
   // The number of times to retry the entire specfile when it fails as a whole
   // specFileRetries: 1,
@@ -132,12 +127,12 @@ exports.config = {
   // The only one supported by default is 'dot'
   // see also: https://webdriver.io/docs/dot-reporter
   reporters: [
-    "spec",
+    'spec',
     [
-      "junit",
+      'junit',
       {
-        outputDir: "./report",
-        outputFileFormat: function (options) {
+        outputDir: './artifacts/junit',
+        outputFileFormat(options) {
           return `results-${options.cid}.xml`;
         },
       },
@@ -147,7 +142,7 @@ exports.config = {
   // Options to be passed to Mocha.
   // See the full list at http://mochajs.org/
   mochaOpts: {
-    ui: "bdd",
+    ui: 'bdd',
     timeout: 60000,
   },
   //
@@ -235,17 +230,13 @@ exports.config = {
    * @param {Boolean} result.passed    true if test has passed, otherwise false
    * @param {Object}  result.retries   informations to spec related retries, e.g. `{ attempts: 0, limit: 0 }`
    */
-  afterTest: async (
-    test,
-    context,
-    { error, result, duration, passed, retries }
-  ) => {
+  afterTest: async (test, context, result) => {
     // take a screenshot anytime a test fails and throws an error
-    if (error) {
+    if (result.error) {
       console.log(`Screenshot for the failed test ${test.title} is saved`);
 
-      const filename = test.title + ".png";
-      const dirPath = "./artifacts/screenshots/";
+      const filename = test.title + '.png';
+      const dirPath = './artifacts/screenshots/';
 
       if (!existsSync(dirPath)) {
         mkdirSync(dirPath, {
@@ -304,6 +295,6 @@ exports.config = {
    * @param {String} oldSessionId session ID of the old session
    * @param {String} newSessionId session ID of the new session
    */
-  //onReload: function(oldSessionId, newSessionId) {
-  //}
+  // onReload: function(oldSessionId, newSessionId) {
+  // }
 };

@@ -1,4 +1,4 @@
-const { Header } = require("../components");
+const { Header } = require('../components');
 
 class BasePage {
   constructor(url) {

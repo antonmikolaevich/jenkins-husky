@@ -1,16 +1,16 @@
-const BaseComponent = require("../common/base.component");
+const BaseComponent = require('../common/base.component');
 
 class AddDoctorComponent extends BaseComponent {
   constructor() {
-    super(".new-doctor-dialog");
+    super('.new-doctor-dialog');
   }
 
   get closeBtn() {
-    return this.rootEl.$(".button-container button.e-btn:not(.e-primary)");
+    return this.rootEl.$('.button-container button.e-btn:not(.e-primary)');
   }
 
   get saveBtn() {
-    return this.rootEl.$(".button-container button.e-primary");
+    return this.rootEl.$('.button-container button.e-primary');
   }
 
   /**
@@ -18,8 +18,8 @@ class AddDoctorComponent extends BaseComponent {
    */
   input(name) {
     const selectors = {
-      name: "#Name input",
-      phone: "input#DoctorMobile",
+      name: '#Name input',
+      phone: 'input#DoctorMobile',
       email: 'input[name="Email"]',
       education: 'input[name="Education"]',
       designation: 'input[name="Designation"]',

@@ -1,11 +1,13 @@
 {
-  "name": "webdriverio-tests",
-  "version": "0.1.0",
+  "name": "module-6",
+  "version": "1.0.0",
+  "description": "Module 6: WebdriverIO: Page Object Model",
+  "license": "EPAM Systems",
   "private": true,
   "scripts": {
-    "wdio": "wdio run src/configs/wdio.conf.js"
+    "test": "wdio run src/configs/wdio.conf.js"
   },
-  "engines": {
-    "node": ">=14.0.0 < 17.0.0"
+  "dependencies": {
+    "expect-webdriverio": "^3.4.0"
   }
 }

@@ -1,7 +1,7 @@
-const express = require("express");
-const write = require("./write");
-const getFullURL = require("./get-full-url");
-const delay = require("./delay");
+const express = require('express');
+const write = require('./write');
+const getFullURL = require('./get-full-url');
+const delay = require('./delay');
 
 module.exports = (db, name, opts) => {
   const router = express.Router();
@@ -20,7 +20,7 @@ module.exports = (db, name, opts) => {
       res.locals.data = db.get(name).value();
     }
 
-    res.setHeader("Access-Control-Expose-Headers", "Location");
+    res.setHeader('Access-Control-Expose-Headers', 'Location');
     res.location(`${getFullURL(req)}`);
 
     res.status(201);
@@ -29,14 +29,14 @@ module.exports = (db, name, opts) => {
 
   function update(req, res, next) {
     if (opts._isFake) {
-      if (req.method === "PUT") {
+      if (req.method === 'PUT') {
         res.locals.data = req.body;
       } else {
         const resource = db.get(name).value();
         res.locals.data = { ...resource, ...req.body };
       }
     } else {
-      if (req.method === "PUT") {
+      if (req.method === 'PUT') {
         db.set(name, req.body).value();
       } else {
         db.get(name).assign(req.body).value();
@@ -50,7 +50,7 @@ module.exports = (db, name, opts) => {
 
   const w = write(db);
 
-  router.route("/").get(show).post(create, w).put(update, w).patch(update, w);
+  router.route('/').get(show).post(create, w).put(update, w).patch(update, w);
 
   return router;
 };

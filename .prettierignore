@@ -1,2 +1,4 @@
-# Ignore all HTML files:
 *.html
+
+**/coverage
+**/mochawesome-report

@@ -1,3 +1,5 @@
+# Module 3: WebdriverIO: Locators
+
 ## Task
 
 1. Install and configure WebdriverIO

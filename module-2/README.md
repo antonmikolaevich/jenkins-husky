@@ -1,24 +1,12 @@
-# NodeJS Unit Tests Example Using Mocha
+# Module 2: Unit Testing in JavaScript
 
-## Requirements
-
-- [NodeJS](https://nodejs.org/en/) LTS version 12 or above
-
-## Installation
-
-`npm i`
-
-## Run tests
+## Run tests without test coverage report
 
 `npm test`
 
-## Get unit tests coverage
+## Get unit tests with coverage report
 
 `npm run coverage`
-
-## Run linter
-
-`npm run lint`
 
 ## Task
 

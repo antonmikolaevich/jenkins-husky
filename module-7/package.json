@@ -2,10 +2,9 @@
   "name": "module-7",
   "version": "1.0.0",
   "description": "Module-7: Advanced Configuration",
+  "license": "EPAM Systems",
+  "private": true,
   "scripts": {
-    "wdio": "wdio run ./src/configs/wdio.conf.js"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+    "test": "wdio run ./src/configs/wdio.conf.js"
+  }
 }

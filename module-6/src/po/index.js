@@ -1,4 +1,4 @@
-const pages = require("./pages");
+const pages = require('./pages');
 
 module.exports = {
   ...pages,
