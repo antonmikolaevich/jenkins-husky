@@ -119,7 +119,7 @@ $> npm test -> run test examples related to chosen module
 #### Module 10: Continuous Integration
 
 1. Course link: https://learn.epam.com/detailsPage?id=59bdf234-6664-4f38-a9c5-6689edd6f8d4
-1. Home task: setup automatic jobs to run your UI / Unit / API tests
+1. Home task: https://git.epam.com/Dzmitry_Shaplyka/js-atm-program/-/blob/master/module-10/README.md#task
 
 ## Contact list
 
