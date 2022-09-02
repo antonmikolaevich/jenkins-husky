@@ -1,4 +1,4 @@
-# Module-9: API Testing
+# Module 9: API Testing in JavaScript
 
 ## Running server
 
@@ -6,7 +6,6 @@ Go to the server folder and start the service
 
 ```
 $> cd server
-$> npm install
 $> npm start
 ```
 
@@ -17,7 +16,6 @@ Service documentation can be found here: https://jsonplaceholder.typicode.com/gu
 Go to the main folder (module-9) and start the service
 
 ```
-$> npm install
 $> npm test
 ```
 

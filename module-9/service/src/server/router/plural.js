@@ -1,10 +1,10 @@
-const express = require("express");
-const _ = require("lodash");
-const pluralize = require("pluralize");
-const write = require("./write");
-const getFullURL = require("./get-full-url");
-const utils = require("../utils");
-const delay = require("./delay");
+const express = require('express');
+const _ = require('lodash');
+const pluralize = require('pluralize');
+const write = require('./write');
+const getFullURL = require('./get-full-url');
+const utils = require('../utils');
+const delay = require('./delay');
 
 module.exports = (db, name, opts) => {
   // Create router
@@ -14,15 +14,12 @@ module.exports = (db, name, opts) => {
   // Embed function used in GET /name and GET /name/id
   function embed(resource, e) {
     e &&
-      [].concat(e).forEach((externalResource) => {
+      [].concat(e).forEach(externalResource => {
         if (db.get(externalResource).value) {
           const query = {};
           const singularResource = pluralize.singular(name);
           query[`${singularResource}${opts.foreignKeySuffix}`] = resource.id;
-          resource[externalResource] = db
-            .get(externalResource)
-            .filter(query)
-            .value();
+          resource[externalResource] = db.get(externalResource).filter(query).value();
         }
       });
   }
@@ -30,14 +27,11 @@ module.exports = (db, name, opts) => {
   // Expand function used in GET /name and GET /name/id
   function expand(resource, e) {
     e &&
-      [].concat(e).forEach((innerResource) => {
+      [].concat(e).forEach(innerResource => {
         const plural = pluralize(innerResource);
         if (db.get(plural).value()) {
           const prop = `${innerResource}${opts.foreignKeySuffix}`;
-          resource[innerResource] = db
-            .get(plural)
-            .getById(resource[prop])
-            .value();
+          resource[innerResource] = db.get(plural).getById(resource[prop]).value();
         }
       });
   }
@@ -74,13 +68,13 @@ module.exports = (db, name, opts) => {
 
     // Automatically delete query parameters that can't be found
     // in the database
-    Object.keys(req.query).forEach((query) => {
+    Object.keys(req.query).forEach(query => {
       const arr = db.get(name).value();
       for (const i in arr) {
         if (
           _.has(arr[i], query) ||
-          query === "callback" ||
-          query === "_" ||
+          query === 'callback' ||
+          query === '_' ||
           /_lte$/.test(query) ||
           /_gte$/.test(query) ||
           /_ne$/.test(query) ||
@@ -99,7 +93,7 @@ module.exports = (db, name, opts) => {
 
       q = q.toLowerCase();
 
-      chain = chain.filter((obj) => {
+      chain = chain.filter(obj => {
         for (const key in obj) {
           const value = obj[key];
           if (db._.deepQuery(value, q)) {
@@ -109,19 +103,19 @@ module.exports = (db, name, opts) => {
       });
     }
 
-    Object.keys(req.query).forEach((key) => {
+    Object.keys(req.query).forEach(key => {
       // Don't take into account JSONP query parameters
       // jQuery adds a '_' query parameter too
-      if (key !== "callback" && key !== "_") {
+      if (key !== 'callback' && key !== '_') {
         // Always use an array, in case req.query is an array
         const arr = [].concat(req.query[key]);
 
         const isDifferent = /_ne$/.test(key);
         const isRange = /_lte$/.test(key) || /_gte$/.test(key);
         const isLike = /_like$/.test(key);
-        const path = key.replace(/(_lte|_gte|_ne|_like)$/, "");
+        const path = key.replace(/(_lte|_gte|_ne|_like)$/, '');
 
-        chain = chain.filter((element) => {
+        chain = chain.filter(element => {
           return arr
             .map(function (value) {
               // get item value based on path
@@ -136,13 +130,11 @@ module.exports = (db, name, opts) => {
               if (isRange) {
                 const isLowerThan = /_gte$/.test(key);
 
-                return isLowerThan
-                  ? value <= elementValue
-                  : value >= elementValue;
+                return isLowerThan ? value <= elementValue : value >= elementValue;
               } else if (isDifferent) {
                 return value !== elementValue.toString();
               } else if (isLike) {
-                return new RegExp(value, "i").test(elementValue.toString());
+                return new RegExp(value, 'i').test(elementValue.toString());
               } else {
                 return value === elementValue.toString();
               }
@@ -154,18 +146,15 @@ module.exports = (db, name, opts) => {
 
     // Sort
     if (_sort) {
-      const _sortSet = _sort.split(",");
-      const _orderSet = (_order || "").split(",").map((s) => s.toLowerCase());
+      const _sortSet = _sort.split(',');
+      const _orderSet = (_order || '').split(',').map(s => s.toLowerCase());
       chain = chain.orderBy(_sortSet, _orderSet);
     }
 
     // Slice result
     if (_end || _limit || _page) {
-      res.setHeader("X-Total-Count", chain.size());
-      res.setHeader(
-        "Access-Control-Expose-Headers",
-        `X-Total-Count${_page ? ", Link" : ""}`
-      );
+      res.setHeader('X-Total-Count', chain.size());
+      res.setHeader('Access-Control-Expose-Headers', `X-Total-Count${_page ? ', Link' : ''}`);
     }
 
     if (_page) {
@@ -177,31 +166,19 @@ module.exports = (db, name, opts) => {
       const fullURL = getFullURL(req);
 
       if (page.first) {
-        links.first = fullURL.replace(
-          `page=${page.current}`,
-          `page=${page.first}`
-        );
+        links.first = fullURL.replace(`page=${page.current}`, `page=${page.first}`);
       }
 
       if (page.prev) {
-        links.prev = fullURL.replace(
-          `page=${page.current}`,
-          `page=${page.prev}`
-        );
+        links.prev = fullURL.replace(`page=${page.current}`, `page=${page.prev}`);
       }
 
       if (page.next) {
-        links.next = fullURL.replace(
-          `page=${page.current}`,
-          `page=${page.next}`
-        );
+        links.next = fullURL.replace(`page=${page.current}`, `page=${page.next}`);
       }
 
       if (page.last) {
-        links.last = fullURL.replace(
-          `page=${page.current}`,
-          `page=${page.last}`
-        );
+        links.last = fullURL.replace(`page=${page.current}`, `page=${page.last}`);
       }
 
       res.links(links);
@@ -261,7 +238,7 @@ module.exports = (db, name, opts) => {
       resource = db.get(name).insert(req.body).value();
     }
 
-    res.setHeader("Access-Control-Expose-Headers", "Location");
+    res.setHeader('Access-Control-Expose-Headers', 'Location');
     res.location(`${getFullURL(req)}/${resource.id}`);
 
     res.status(201);
@@ -279,7 +256,7 @@ module.exports = (db, name, opts) => {
     if (opts._isFake) {
       resource = db.get(name).getById(id).value();
 
-      if (req.method === "PATCH") {
+      if (req.method === 'PATCH') {
         resource = { ...resource, ...req.body };
       } else {
         resource = { ...req.body, id: resource.id };
@@ -287,10 +264,7 @@ module.exports = (db, name, opts) => {
     } else {
       let chain = db.get(name);
 
-      chain =
-        req.method === "PATCH"
-          ? chain.updateById(id, req.body)
-          : chain.replaceById(id, req.body);
+      chain = req.method === 'PATCH' ? chain.updateById(id, req.body) : chain.replaceById(id, req.body);
 
       resource = chain.value();
     }
@@ -313,7 +287,7 @@ module.exports = (db, name, opts) => {
 
       // Remove dependents documents
       const removable = db._.getRemovable(db.getState(), opts);
-      removable.forEach((item) => {
+      removable.forEach(item => {
         db.get(item.name).removeById(item.id).value();
       });
     }
@@ -327,14 +301,9 @@ module.exports = (db, name, opts) => {
 
   const w = write(db);
 
-  router.route("/").get(list).post(create, w);
+  router.route('/').get(list).post(create, w);
 
-  router
-    .route("/:id")
-    .get(show)
-    .put(update, w)
-    .patch(update, w)
-    .delete(destroy, w);
+  router.route('/:id').get(show).put(update, w).patch(update, w).delete(destroy, w);
 
   return router;
 };

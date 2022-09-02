@@ -1,3 +1,5 @@
+# Module 1: Introduction into JavaScript Automated Testing
+
 ## Task
 
 1. Download and Install NodeJS: https://nodejs.org/en/

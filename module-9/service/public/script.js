@@ -2,7 +2,7 @@ function ResourceItem({ name, length }) {
   return `
     <li>
       <a href="${name}">/${name}</a>
-      <sup>${length ? `${length}x` : "object"}</sup>
+      <sup>${length ? `${length}x` : 'object'}</sup>
     </li>
   `;
 }
@@ -11,13 +11,13 @@ function ResourceList({ db }) {
   return `
     <ul>
       ${Object.keys(db)
-        .map((name) =>
+        .map(name =>
           ResourceItem({
             name,
             length: Array.isArray(db[name]) && db[name].length,
-          })
+          }),
         )
-        .join("")}
+        .join('')}
     </ul>
   `;
 }
@@ -36,12 +36,9 @@ function ResourcesBlock({ db }) {
 }
 
 window
-  .fetch("db")
-  .then((response) => response.json())
-  .then(
-    (db) =>
-      (document.getElementById("resources").innerHTML = ResourcesBlock({ db }))
-  );
+  .fetch('db')
+  .then(response => response.json())
+  .then(db => (document.getElementById('resources').innerHTML = ResourcesBlock({ db })));
 
 function CustomRoutesBlock({ customRoutes }) {
   const rules = Object.keys(customRoutes);
@@ -52,13 +49,13 @@ function CustomRoutesBlock({ customRoutes }) {
         <table>
           ${rules
             .map(
-              (rule) =>
+              rule =>
                 `<tr>
               <td>${rule}</td>
               <td><code>⇢</code> ${customRoutes[rule]}</td>
-            </tr>`
+            </tr>`,
             )
-            .join("")}
+            .join('')}
         </table>
       </div>
     `;
@@ -66,11 +63,11 @@ function CustomRoutesBlock({ customRoutes }) {
 }
 
 window
-  .fetch("__rules")
-  .then((response) => response.json())
+  .fetch('__rules')
+  .then(response => response.json())
   .then(
-    (customRoutes) =>
-      (document.getElementById("custom-routes").innerHTML = CustomRoutesBlock({
+    customRoutes =>
+      (document.getElementById('custom-routes').innerHTML = CustomRoutesBlock({
         customRoutes,
-      }))
+      })),
   );

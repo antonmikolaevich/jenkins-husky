@@ -5,12 +5,7 @@
     "es2021": true
   },
   "plugins": ["wdio", "mocha"],
-  "extends": [
-    "airbnb-base",
-    "prettier",
-    "plugin:wdio/recommended",
-    "plugin:mocha/recommended"
-  ],
+  "extends": ["airbnb-base", "prettier", "plugin:wdio/recommended", "plugin:mocha/recommended"],
   "parserOptions": {
     "ecmaVersion": "latest"
   },
@@ -25,5 +20,5 @@
     "no-param-reassign": "off",
     "prefer-template": "off"
   },
-  "ignorePatterns": ["/module-9/service/*", "/module-2/**/*"]
+  "ignorePatterns": ["/module-9/service/*", "**/coverage", "**/mochawesome-report", "**/artifacts", "**/report"]
 }

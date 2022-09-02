@@ -1,3 +1,5 @@
+# Module 6: WebdriverIO: Page Object Model
+
 ## Task
 
 1. Convert your project from previous home tasks to a proper layered structure.
