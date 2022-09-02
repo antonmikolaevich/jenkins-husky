@@ -29,4 +29,7 @@ and write test scenarios to test each of CRUD operations:
 - Update (using put() method);
 - Delete (using delete() method);
 
-You should write both positive/negative test scenarios
+#### Acceptance Criteria
+
+1. Test are written
+1. Both positive and negative scenarios are implemented
