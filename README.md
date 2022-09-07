@@ -16,11 +16,11 @@ Refresh your knowledge about Git: https://learn.epam.com/detailsPage?id=16d7f2e7
 [Module 4: WebdriverIO: Basic Commands](#module_4)  
 [Module 5: WebdriverIO: Advanced Commands](#module_5)  
 [Module 6: WebdriverIO: Page Object Model](#module_6)  
-[Module 7: WebdriverIO: Advanced Configuration](#module_7)
-[Module 8: BDD in Automated Testing with JavaScript](#module_8)
-[Module 9: API Testing in JavaScript](#module_9)
-[Module 10: Continuous Integration](#module_10)
-[Contact list](#contacts)
+[Module 7: WebdriverIO: Advanced Configuration](#module_7)  
+[Module 8: BDD in Automated Testing with JavaScript](#module_8)  
+[Module 9: API Testing in JavaScript](#module_9)  
+[Module 10: Continuous Integration](#module_10)  
+[Contact list](#contacts)  
 [License](#license)
 
 <a name="description"/>
@@ -112,7 +112,7 @@ $> npm test -> run test examples related to chosen module
 #### Module 9: API Testing in JavaScript
 
 1. Video Materials: https://videoportal.epam.com/playlist/dYoKWjY3/play/VYGGmxYv
-1. Home Task: https://git.epam.com/Dzmitry_Shaplyka/js-atm-program/-/blob/master/module-9/readme.md#task
+1. Home Task: https://git.epam.com/Dzmitry_Shaplyka/js-atm-program/-/blob/master/module-9/README.md#task
 
 <a name="module_10"/>
 
