@@ -54,7 +54,7 @@ $> npm test -> run test examples related to chosen module
 ## Module 1: Introduction into JavaScript Automated Testing
 
 1. Video Materials: https://videoportal.epam.com/playlist/M7kDmLap/play/e7nz0Z76
-1. Home Task: https://git.epam.com/Dzmitry_Shaplyka/js-atm-program/-/blob/master/module-1/readme.md#task
+1. Home Task: https://git.epam.com/Dzmitry_Shaplyka/js-atm-program/-/blob/master/module-1/README.md#task
 
 <a name="module_2"/>
 
@@ -91,7 +91,7 @@ $> npm test -> run test examples related to chosen module
 #### Module 6: WebdriverIO: Page Object Model
 
 1. Video Materials: https://videoportal.epam.com/playlist/RYpzxA7y/play/ZaAkAxJN
-1. Home Task: https://git.epam.com/Dzmitry_Shaplyka/js-atm-program/-/blob/master/module-6/readme.md#task
+1. Home Task: https://git.epam.com/Dzmitry_Shaplyka/js-atm-program/-/blob/master/module-6/README.md#task
 
 <a name="module_7"/>
 
