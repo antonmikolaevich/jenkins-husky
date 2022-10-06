@@ -10,11 +10,10 @@
 
 ## Task
 
-1. Cover provided code (create a file with the provided content) with unit tests using Mocha.
+1. Copy 'numbers-validator.js' file and cover it (create a file with the provided content) with unit tests using Mocha.
 1. Add mochawesome as a reporter.
 1. Add code coverage analyzer c8.
 1. Setup eslint with a popular style guide.
-1. Setup pre-commit hook using husky, which runs code coverage analysis and eslint before any commit.
 
 #### Acceptance criteria:
 
