@@ -52,5 +52,12 @@
   },
   "devDependencies": {
     "chai": "^4.3.7"
-  }
+  },
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://git.epam.com/mohat_shil/js-atm-program.git"
+  },
+  "keywords": [],
+  "author": "Mohat_Shil"
 }
