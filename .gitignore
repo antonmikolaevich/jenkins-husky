@@ -1,9 +1,13 @@
 .idea
 .vscode
+node_modules
+coverage
+mochawesome-report
 
-**/coverage
-**/mochawesome-report
+
+
 **/artifacts
 **/report
-**/node_modules
+
 **/lib
+
