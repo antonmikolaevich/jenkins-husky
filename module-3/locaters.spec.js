@@ -1,3 +1,5 @@
+
+
 describe('Module 3: WebdriverIO Introduction', () => {
   beforeEach(async () => {
     await browser.url('/showcase/angular/appointmentplanner/#/dashboard');
@@ -98,10 +100,14 @@ describe('Module 3: WebdriverIO Introduction', () => {
     // css
     await preferance.click();
 
-    // xpath just for demo, will select week
-    await $$("(//span[@role='listbox'])[1]");
+    // assertion to check if week is visible 
+    const defaultView = await $("(//span[@role='listbox'])[1]")
+    await expect(defaultView).toBeDisplayed()
 
-    //   const firstDayofWeek = await $("(//div[normalize-space()='First Day of the Week'])")
-    // await expect(firstDayofWeek).toBeChecked()
+    // first of the month should be Monday
+    const firstDayOfMonthDropDown = await $("#FirstDayOfWeek")
+    await expect(firstDayOfMonthDropDown).toBeClickable()
+    
+
   });
 });
