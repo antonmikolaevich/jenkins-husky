@@ -3,13 +3,15 @@ exports.config = {
   // ====================
   // Runner Configuration
   // ====================
-  //
+  // WebdriverIO supports running e2e tests as well as unit and component tests.
+  runner: 'local',
+
   //
   // ==================
   // Specify Test Files
   // ==================
   // Define which test specs should run. The pattern is relative to the directory
-  // from which `wdio` was called.
+  // of the configuration file being run.
   //
   // The specs are defined as an array of spec files (optionally using wildcards
   // that will be expanded). The test for each spec file will be run in a separate
@@ -20,7 +22,7 @@ exports.config = {
   // then the current working directory is where your `package.json` resides, so `wdio`
   // will be called from there.
   //
-  specs: ['./**/tests/**.test.js'],
+  specs: ['./*.spec.js'],
   // Patterns to exclude.
   exclude: [
     // 'path/to/excluded/files'
@@ -49,7 +51,17 @@ exports.config = {
   //
   capabilities: [
     {
+      // maxInstances can get overwritten per capability. So if you have an in-house Selenium
+      // grid with only 5 firefox instances available you can make sure that not more than
+      // 5 instances get started at a time.
+      maxInstances: 5,
+      //
       browserName: 'chrome',
+      acceptInsecureCerts: true,
+      // If outputDir is provided WebdriverIO can capture driver session logs
+      // it is possible to configure which logTypes to include/exclude.
+      // excludeDriverLogs: ['*'], // pass '*' to exclude all driver session logs
+      // excludeDriverLogs: ['bugreport', 'server'],
     },
   ],
   //
@@ -121,7 +133,8 @@ exports.config = {
   // Test reporter for stdout.
   // The only one supported by default is 'dot'
   // see also: https://webdriver.io/docs/dot-reporter
-  reporters: [],
+  reporters: ['spec'],
+
   //
   // Options to be passed to Mocha.
   // See the full list at http://mochajs.org/
@@ -150,10 +163,19 @@ exports.config = {
    * @param  {String} cid      capability id (e.g 0-0)
    * @param  {[type]} caps     object containing capabilities for session that will be spawn in the worker
    * @param  {[type]} specs    specs to be run in the worker process
-   * @param  {[type]} args     object that will be merged with the main configuration once worker is initialised
+   * @param  {[type]} args     object that will be merged with the main configuration once worker is initialized
    * @param  {[type]} execArgv list of string arguments passed to the worker process
    */
   // onWorkerStart: function (cid, caps, specs, args, execArgv) {
+  // },
+  /**
+   * Gets executed just after a worker process has exited.
+   * @param  {String} cid      capability id (e.g 0-0)
+   * @param  {Number} exitCode 0 - success, 1 - fail
+   * @param  {[type]} specs    specs to be run in the worker process
+   * @param  {Number} retries  number of retries used
+   */
+  // onWorkerEnd: function (cid, exitCode, specs, retries) {
   // },
   /**
    * Gets executed just before initialising the webdriver session and test framework. It allows you
@@ -214,32 +236,9 @@ exports.config = {
    * @param {Boolean} result.passed    true if test has passed, otherwise false
    * @param {Object}  result.retries   informations to spec related retries, e.g. `{ attempts: 0, limit: 0 }`
    */
-  // afterTest: async (
-  //   test,
-  //   context, {
-  //     error,
-  //     result,
-  //     duration,
-  //     passed,
-  //     retries
-  //   }
-  // ) => {
-  //   // take a screenshot anytime a test fails and throws an error
-  //   if (error) {
-  //     console.log(`Screenshot for the failed test ${test.title} is saved`);
-
-  //     const filename = test.title + ".png";
-  //     const dirPath = "./artifacts/screenshots/";
-
-  //     if (!existsSync(dirPath)) {
-  //       mkdirSync(dirPath, {
-  //         recursive: true,
-  //       });
-  //     }
-
-  //     await browser.saveScreenshot(dirPath + filename);
-  //   }
+  // afterTest: function(test, context, { error, result, duration, passed, retries }) {
   // },
+
   /**
    * Hook that gets executed after the suite has ended
    * @param {Object} suite suite details
