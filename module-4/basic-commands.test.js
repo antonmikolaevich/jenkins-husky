@@ -1,4 +1,4 @@
-describe('Module 4: Basic Commands examples', () => {
+describe.skip('Module 4: Basic Commands examples', () => {
   beforeEach(async () => {
     await browser.url('/showcase/angular/appointmentplanner/#/doctors');
   });

@@ -37,7 +37,10 @@ This is a repository with useful materials and code samples for Automated Testin
   - NPM version - 8 (with `lockfileVersion: 2`)
 
 ```sh
-$> npm i
+npm init -y
+npm i wdio
+npm init wdio
+npm i -D chromedriver@109
 ```
 
 <a name="instruction"/>
@@ -56,7 +59,7 @@ $> npm test -> run test examples related to chosen module
 1. Video Materials: https://videoportal.epam.com/playlist/M7kDmLap/play/e7nz0Z76
 1. Home Task: https://git.epam.com/Dzmitry_Shaplyka/js-atm-program/-/blob/master/module-1/README.md#task
 
-## Module 1 is completed
+
 
 
 <a name="module_2"/>
