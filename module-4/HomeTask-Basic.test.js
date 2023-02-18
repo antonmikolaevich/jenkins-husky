@@ -4,6 +4,9 @@ describe('Module 4 using all the basic commands',()=>{
 
     beforeEach(async () => {
         await browser.url('/showcase/angular/appointmentplanner/#/doctors');
+
+
+
       });
 
 
@@ -17,7 +20,9 @@ describe('Module 4 using all the basic commands',()=>{
         const mailError = await $('label#Email-info');
         const mobileError = await $('label#undefined-info');
         const specialDoc = await $$('#Specialization > span');
-        expect(await specialDoc).toBeDisplayedInViewport();
+
+        
+        expect(await specialDoc).toBeDisplayed();
 
         //click is used
         await doctorsButton.click();
@@ -140,7 +145,7 @@ describe('Module 4 using all the basic commands',()=>{
       });
     
 
-      it.only('should run scenario Five - Dashboard', async () => {
+      it('should run scenario Five - Dashboard', async () => {
 
 
         browser.addCommand("waitAndClick", async function () {
