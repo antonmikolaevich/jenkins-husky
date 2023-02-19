@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="Module 7 Advanced Configuration" timestamp="2023-02-19T22:41:16" time="18.21" tests="4" failures="1" errors="1" skipped="0">
+    <properties>
+      <property name="specId" value="0"/>
+      <property name="suiteName" value="Module 7: Advanced Configuration"/>
+      <property name="capabilities" value="chrome.109_0_5414_121.windows"/>
+      <property name="file" value="file:///C:/Users/Mohat_Shil/Projects/js-atm-program/module-7/tests/advanced-config.test.js"/>
+    </properties>
+    <testcase classname="chrome.109_0_5414_121.windows.Module_7:_Advanced_Configuration" name="should open page" time="3.066">
+      <system-out><![CDATA[
+COMMAND: POST /session/0acd58464357c06dfd95fd1e0ad17be7/url - {"url":"https://ej2.syncfusion.com/showcase/angular/appointmentplanner/#/dashboard"}
+RESULT: {"url":"https://ej2.syncfusion.com/showcase/angular/appointmentplanner/#/dashboard"}
+COMMAND: GET /session/0acd58464357c06dfd95fd1e0ad17be7/title - {}
+RESULT: {}
+]]></system-out>
+    </testcase>
+    <testcase classname="chrome.109_0_5414_121.windows.Module_7:_Advanced_Configuration" name="should open modal" time="1.3">
+      <system-out><![CDATA[
+COMMAND: POST /session/0acd58464357c06dfd95fd1e0ad17be7/url - {"url":"https://ej2.syncfusion.com/showcase/angular/appointmentplanner/#/dashboard"}
+RESULT: {"url":"https://ej2.syncfusion.com/showcase/angular/appointmentplanner/#/dashboard"}
+COMMAND: POST /session/0acd58464357c06dfd95fd1e0ad17be7/element - {"using":"css selector","value":"[routerlink='/doctors']"}
+RESULT: {"using":"css selector","value":"[routerlink='/doctors']"}
+COMMAND: POST /session/0acd58464357c06dfd95fd1e0ad17be7/element/5f022cf4-e502-4597-8abc-1effbd7d7fa5/click - {}
+RESULT: {}
+COMMAND: POST /session/0acd58464357c06dfd95fd1e0ad17be7/element - {"using":"css selector","value":".specialization-types button.e-control"}
+RESULT: {"using":"css selector","value":".specialization-types button.e-control"}
+COMMAND: POST /session/0acd58464357c06dfd95fd1e0ad17be7/element/a01c0493-f772-408b-8543-9518bfac1656/click - {}
+RESULT: {}
+COMMAND: POST /session/0acd58464357c06dfd95fd1e0ad17be7/element - {"using":"css selector","value":"#_dialog-content"}
+RESULT: {"using":"css selector","value":"#_dialog-content"}
+COMMAND: POST /session/0acd58464357c06dfd95fd1e0ad17be7/execute/sync - {"script":"return (function isElementDisplayed(element) {\n    function nodeIsElement(node) {\n        if (!node) {\n            return false;\n        }\n        switch (node.nodeType) {\n            case Node.ELEMEN ... (7807 more bytes)","args":[{"element-6066-11e4-a52e-4f735466cecf":"843372d5-6753-48c6-9102-e2d1c8329592","ELEMENT":"843372d5-6753-48c6-9102-e2d1c8329592"}]}
+RESULT: {"script":"return (function isElementDisplayed(element) {\n    function nodeIsElement(node) {\n        if (!node) {\n            return false;\n        }\n        switch (node.nodeType) {\n            case Node.ELEMEN ... (7807 more bytes)","args":[{"element-6066-11e4-a52e-4f735466cecf":"843372d5-6753-48c6-9102-e2d1c8329592","ELEMENT":"843372d5-6753-48c6-9102-e2d1c8329592"}]}
+]]></system-out>
+    </testcase>
+    <testcase classname="chrome.109_0_5414_121.windows.Module_7:_Advanced_Configuration" name="should add doctor" time="13.05">
+      <failure/>
+      <error message="Expect $(`#Specialist_8`).$(`.name`) to have text containing&#xA;&#xA;Expected: &quot;John Doe 0000&quot;&#xA;Received: &quot;Dr. John Doe&quot;"/>
+      <system-out><![CDATA[
+COMMAND: POST /session/0acd58464357c06dfd95fd1e0ad17be7/url - {"url":"https://ej2.syncfusion.com/showcase/angular/appointmentplanner/#/dashboard"}
+RESULT: {"url":"https://ej2.syncfusion.com/showcase/angular/appointmentplanner/#/dashboard"}
+COMMAND: POST /session/0acd58464357c06dfd95fd1e0ad17be7/element - {"using":"css selector","value":"[routerlink='/doctors']"}
+RESULT: {"using":"css selector","value":"[routerlink='/doctors']"}
+COMMAND: POST /session/0acd58464357c06dfd95fd1e0ad17be7/execute/sync - {"script":"return (function isElementDisplayed(element) {\n    function nodeIsElement(node) {\n        if (!node) {\n            return false;\n        }\n        switch (node.nodeType) {\n            case Node.ELEMEN ... (7807 more bytes)","args":[{"element-6066-11e4-a52e-4f735466cecf":"5f022cf4-e502-4597-8abc-1effbd7d7fa5","ELEMENT":"5f022cf4-e502-4597-8abc-1effbd7d7fa5"}]}
+RESULT: {"script":"return (function isElementDisplayed(element) {\n    function nodeIsElement(node) {\n        if (!node) {\n            return false;\n        }\n        switch (node.nodeType) {\n            case Node.ELEMEN ... (7807 more bytes)","args":[{"element-6066-11e4-a52e-4f735466cecf":"5f022cf4-e502-4597-8abc-1effbd7d7fa5","ELEMENT":"5f022cf4-e502-4597-8abc-1effbd7d7fa5"}]}
+COMMAND: POST /session/0acd58464357c06dfd95fd1e0ad17be7/element - {"using":"css selector","value":"[routerlink='/doctors']"}
+RESULT: {"using":"css selector","value":"[routerlink='/doctors']"}
+COMMAND: POST /session/0acd58464357c06dfd95fd1e0ad17be7/element/5f022cf4-e502-4597-8abc-1effbd7d7fa5/click - {}
+RESULT: {}
+COMMAND: POST /session/0acd58464357c06dfd95fd1e0ad17be7/element - {"using":"css selector","value":".specialization-types button.e-control"}
+RESULT: {"using":"css selector","value":".specialization-types button.e-control"}
+COMMAND: POST /session/0acd58464357c06dfd95fd1e0ad17be7/element/3cd3344e-bacc-4a5a-b8b7-c31cbcecdabc/click - {}
+RESULT: {}
+COMMAND: POST /session/0acd58464357c06dfd95fd1e0ad17be7/element - {"using":"css selector","value":"#Name input"}
+RESULT: {"using":"css selector","value":"#Name input"}
+COMMAND: POST /session/0acd58464357c06dfd95fd1e0ad17be7/element/2860aa8c-0a14-4370-91be-6cfe6a1ad779/clear - {}
+RESULT: {}
+COMMAND: POST /session/0acd58464357c06dfd95fd1e0ad17be7/element/2860aa8c-0a14-4370-91be-6cfe6a1ad779/value - {"text":"John Doe"}
+RESULT: {"text":"John Doe"}
+COMMAND: POST /session/0acd58464357c06dfd95fd1e0ad17be7/element - {"using":"css selector","value":"input#DoctorMobile"}
+RESULT: {"using":"css selector","value":"input#DoctorMobile"}
+COMMAND: POST /session/0acd58464357c06dfd95fd1e0ad17be7/element/0bff0c14-329b-405f-9b2b-e1bf671e8088/clear - {}
+RESULT: {}
+COMMAND: POST /session/0acd58464357c06dfd95fd1e0ad17be7/element/0bff0c14-329b-405f-9b2b-e1bf671e8088/value - {"text":"1111111111"}
+RESULT: {"text":"1111111111"}
+COMMAND: POST /session/0acd58464357c06dfd95fd1e0ad17be7/element - {"using":"css selector","value":"input[name='Email']"}
+RESULT: {"using":"css selector","value":"input[name='Email']"}
+COMMAND: POST /session/0acd58464357c06dfd95fd1e0ad17be7/element/2a2da2da-c7bc-4acc-b7bd-8d29de922ff6/clear - {}
+RESULT: {}
+COMMAND: POST /session/0acd58464357c06dfd95fd1e0ad17be7/element/2a2da2da-c7bc-4acc-b7bd-8d29de922ff6/value - {"text":"test@test.com"}
+RESULT: {"text":"test@test.com"}
+COMMAND: POST /session/0acd58464357c06dfd95fd1e0ad17be7/element - {"using":"css selector","value":"input[name='Education']"}
+RESULT: {"using":"css selector","value":"input[name='Education']"}
+COMMAND: POST /session/0acd58464357c06dfd95fd1e0ad17be7/element/1c92df9a-d461-4410-8345-ddc968c3d8f5/clear - {}
+RESULT: {}
+COMMAND: POST /session/0acd58464357c06dfd95fd1e0ad17be7/element/1c92df9a-d461-4410-8345-ddc968c3d8f5/value - {"text":"Basic"}
+RESULT: {"text":"Basic"}
+COMMAND: POST /session/0acd58464357c06dfd95fd1e0ad17be7/element - {"using":"css selector","value":"input[name='Designation']"}
+RESULT: {"using":"css selector","value":"input[name='Designation']"}
+COMMAND: POST /session/0acd58464357c06dfd95fd1e0ad17be7/element/08ed810b-8593-4bdd-a42a-430c0d2f18ea/clear - {}
+RESULT: {}
+COMMAND: POST /session/0acd58464357c06dfd95fd1e0ad17be7/element/08ed810b-8593-4bdd-a42a-430c0d2f18ea/value - {"text":"Test"}
+RESULT: {"text":"Test"}
+COMMAND: POST /session/0acd58464357c06dfd95fd1e0ad17be7/element - {"using":"css selector","value":".button-container button.e-primary"}
+RESULT: {"using":"css selector","value":".button-container button.e-primary"}
+COMMAND: POST /session/0acd58464357c06dfd95fd1e0ad17be7/element/7b53004c-ce79-441f-8cb1-18760af52705/click - {}
+RESULT: {}
+COMMAND: POST /session/0acd58464357c06dfd95fd1e0ad17be7/element - {"using":"css selector","value":"#_dialog-content"}
+RESULT: {"using":"css selector","value":"#_dialog-content"}
+COMMAND: POST /session/0acd58464357c06dfd95fd1e0ad17be7/execute/sync - {"script":"return (function isElementDisplayed(element) {\n    function nodeIsElement(node) {\n        if (!node) {\n            return false;\n        }\n        switch (node.nodeType) {\n            case Node.ELEMEN ... (7807 more bytes)","args":[{"element-6066-11e4-a52e-4f735466cecf":"757242fe-5468-4993-aac3-a6ae52255ec4","ELEMENT":"757242fe-5468-4993-aac3-a6ae52255ec4"}]}
+RESULT: {"script":"return (function isElementDisplayed(element) {\n    function nodeIsElement(node) {\n        if (!node) {\n            return false;\n        }\n        switch (node.nodeType) {\n            case Node.ELEMEN ... (7807 more bytes)","args":[{"element-6066-11e4-a52e-4f735466cecf":"757242fe-5468-4993-aac3-a6ae52255ec4","ELEMENT":"757242fe-5468-4993-aac3-a6ae52255ec4"}]}
+COMMAND: POST /session/0acd58464357c06dfd95fd1e0ad17be7/element - {"using":"css selector","value":"#Specialist_8"}
+RESULT: {"using":"css selector","value":"#Specialist_8"}
+COMMAND: POST /session/0acd58464357c06dfd95fd1e0ad17be7/element/81d89932-5b1f-4d23-9232-fd81932f97fb/element - {"using":"css selector","value":".name"}
+RESULT: {"using":"css selector","value":".name"}
+COMMAND: GET /session/0acd58464357c06dfd95fd1e0ad17be7/element/fbfc2111-a2f3-4536-b0ea-cd5a01426009/text - {}
+RESULT: {}
+COMMAND: GET /session/0acd58464357c06dfd95fd1e0ad17be7/element/fbfc2111-a2f3-4536-b0ea-cd5a01426009/text - {}
+RESULT: {}
+COMMAND: GET /session/0acd58464357c06dfd95fd1e0ad17be7/element/fbfc2111-a2f3-4536-b0ea-cd5a01426009/text - {}
+RESULT: {}
+COMMAND: GET /session/0acd58464357c06dfd95fd1e0ad17be7/element/fbfc2111-a2f3-4536-b0ea-cd5a01426009/text - {}
+RESULT: {}
+COMMAND: GET /session/0acd58464357c06dfd95fd1e0ad17be7/element/fbfc2111-a2f3-4536-b0ea-cd5a01426009/text - {}
+RESULT: {}
+COMMAND: GET /session/0acd58464357c06dfd95fd1e0ad17be7/element/fbfc2111-a2f3-4536-b0ea-cd5a01426009/text - {}
+RESULT: {}
+COMMAND: GET /session/0acd58464357c06dfd95fd1e0ad17be7/element/fbfc2111-a2f3-4536-b0ea-cd5a01426009/text - {}
+RESULT: {}
+COMMAND: GET /session/0acd58464357c06dfd95fd1e0ad17be7/element/fbfc2111-a2f3-4536-b0ea-cd5a01426009/text - {}
+RESULT: {}
+COMMAND: GET /session/0acd58464357c06dfd95fd1e0ad17be7/element/fbfc2111-a2f3-4536-b0ea-cd5a01426009/text - {}
+RESULT: {}
+COMMAND: GET /session/0acd58464357c06dfd95fd1e0ad17be7/element/fbfc2111-a2f3-4536-b0ea-cd5a01426009/text - {}
+RESULT: {}
+COMMAND: GET /session/0acd58464357c06dfd95fd1e0ad17be7/element/fbfc2111-a2f3-4536-b0ea-cd5a01426009/text - {}
+RESULT: {}
+COMMAND: GET /session/0acd58464357c06dfd95fd1e0ad17be7/element/fbfc2111-a2f3-4536-b0ea-cd5a01426009/text - {}
+RESULT: {}
+COMMAND: GET /session/0acd58464357c06dfd95fd1e0ad17be7/element/fbfc2111-a2f3-4536-b0ea-cd5a01426009/text - {}
+RESULT: {}
+COMMAND: GET /session/0acd58464357c06dfd95fd1e0ad17be7/element/fbfc2111-a2f3-4536-b0ea-cd5a01426009/text - {}
+RESULT: {}
+COMMAND: GET /session/0acd58464357c06dfd95fd1e0ad17be7/element/fbfc2111-a2f3-4536-b0ea-cd5a01426009/text - {}
+RESULT: {}
+COMMAND: GET /session/0acd58464357c06dfd95fd1e0ad17be7/element/fbfc2111-a2f3-4536-b0ea-cd5a01426009/text - {}
+RESULT: {}
+COMMAND: GET /session/0acd58464357c06dfd95fd1e0ad17be7/element/fbfc2111-a2f3-4536-b0ea-cd5a01426009/text - {}
+RESULT: {}
+COMMAND: GET /session/0acd58464357c06dfd95fd1e0ad17be7/element/fbfc2111-a2f3-4536-b0ea-cd5a01426009/text - {}
+RESULT: {}
+COMMAND: GET /session/0acd58464357c06dfd95fd1e0ad17be7/element/fbfc2111-a2f3-4536-b0ea-cd5a01426009/text - {}
+RESULT: {}
+COMMAND: GET /session/0acd58464357c06dfd95fd1e0ad17be7/screenshot - {}
+RESULT: {}
+]]></system-out>
+      <system-err><![CDATA[
+Error: Expect $(`#Specialist_8`).$(`.name`) to have text containing
+
+Expected: "John Doe 0000"
+Received: "Dr. John Doe"
+    at Context.<anonymous> (C:\Users\Mohat_Shil\Projects\js-atm-program\module-7\tests\advanced-config.test.js:32:35)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+]]></system-err>
+    </testcase>
+    <testcase classname="chrome.109_0_5414_121.windows.Module_7:_Advanced_Configuration" name="should close modal" time="0.782">
+      <system-out><![CDATA[
+COMMAND: POST /session/0acd58464357c06dfd95fd1e0ad17be7/url - {"url":"https://ej2.syncfusion.com/showcase/angular/appointmentplanner/#/dashboard"}
+RESULT: {"url":"https://ej2.syncfusion.com/showcase/angular/appointmentplanner/#/dashboard"}
+COMMAND: POST /session/0acd58464357c06dfd95fd1e0ad17be7/element - {"using":"css selector","value":"[routerlink='/doctors']"}
+RESULT: {"using":"css selector","value":"[routerlink='/doctors']"}
+COMMAND: POST /session/0acd58464357c06dfd95fd1e0ad17be7/execute/sync - {"script":"return (function isElementDisplayed(element) {\n    function nodeIsElement(node) {\n        if (!node) {\n            return false;\n        }\n        switch (node.nodeType) {\n            case Node.ELEMEN ... (7807 more bytes)","args":[{"element-6066-11e4-a52e-4f735466cecf":"5f022cf4-e502-4597-8abc-1effbd7d7fa5","ELEMENT":"5f022cf4-e502-4597-8abc-1effbd7d7fa5"}]}
+RESULT: {"script":"return (function isElementDisplayed(element) {\n    function nodeIsElement(node) {\n        if (!node) {\n            return false;\n        }\n        switch (node.nodeType) {\n            case Node.ELEMEN ... (7807 more bytes)","args":[{"element-6066-11e4-a52e-4f735466cecf":"5f022cf4-e502-4597-8abc-1effbd7d7fa5","ELEMENT":"5f022cf4-e502-4597-8abc-1effbd7d7fa5"}]}
+COMMAND: POST /session/0acd58464357c06dfd95fd1e0ad17be7/element - {"using":"css selector","value":"[routerlink='/doctors']"}
+RESULT: {"using":"css selector","value":"[routerlink='/doctors']"}
+COMMAND: POST /session/0acd58464357c06dfd95fd1e0ad17be7/element/5f022cf4-e502-4597-8abc-1effbd7d7fa5/click - {}
+RESULT: {}
+COMMAND: POST /session/0acd58464357c06dfd95fd1e0ad17be7/element - {"using":"css selector","value":".specialization-types button.e-control"}
+RESULT: {"using":"css selector","value":".specialization-types button.e-control"}
+COMMAND: POST /session/0acd58464357c06dfd95fd1e0ad17be7/element/52168baa-83f4-4739-a6fd-826f88a14dff/click - {}
+RESULT: {}
+COMMAND: POST /session/0acd58464357c06dfd95fd1e0ad17be7/element - {"using":"css selector","value":".button-container button.e-btn:not(.e-primary)"}
+RESULT: {"using":"css selector","value":".button-container button.e-btn:not(.e-primary)"}
+COMMAND: POST /session/0acd58464357c06dfd95fd1e0ad17be7/element/4ca41481-c901-47b8-a090-0ff16d38e842/click - {}
+RESULT: {}
+COMMAND: POST /session/0acd58464357c06dfd95fd1e0ad17be7/element - {"using":"css selector","value":"#_dialog-content"}
+RESULT: {"using":"css selector","value":"#_dialog-content"}
+COMMAND: POST /session/0acd58464357c06dfd95fd1e0ad17be7/execute/sync - {"script":"return (function isElementDisplayed(element) {\n    function nodeIsElement(node) {\n        if (!node) {\n            return false;\n        }\n        switch (node.nodeType) {\n            case Node.ELEMEN ... (7807 more bytes)","args":[{"element-6066-11e4-a52e-4f735466cecf":"e1742480-1c6a-4d02-9455-bd5d9aa40e99","ELEMENT":"e1742480-1c6a-4d02-9455-bd5d9aa40e99"}]}
+RESULT: {"script":"return (function isElementDisplayed(element) {\n    function nodeIsElement(node) {\n        if (!node) {\n            return false;\n        }\n        switch (node.nodeType) {\n            case Node.ELEMEN ... (7807 more bytes)","args":[{"element-6066-11e4-a52e-4f735466cecf":"e1742480-1c6a-4d02-9455-bd5d9aa40e99","ELEMENT":"e1742480-1c6a-4d02-9455-bd5d9aa40e99"}]}
+COMMAND: DELETE /session/0acd58464357c06dfd95fd1e0ad17be7 - {}
+RESULT: {}
+]]></system-out>
+    </testcase>
+  </testsuite>
+</testsuites>

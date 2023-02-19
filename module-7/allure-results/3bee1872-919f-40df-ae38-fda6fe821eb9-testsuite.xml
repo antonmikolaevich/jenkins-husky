@@ -1,0 +1,91 @@
+<?xml version='1.0'?>
+<ns2:test-suite xmlns:ns2='urn:model.allure.qatools.yandex.ru' start='1676842881402' stop='1676842900750'>
+    <name>Module 7: Advanced Configuration</name>
+    <title>Module 7: Advanced Configuration</title>
+    <test-cases>
+        <test-case start='1676842881404' status='passed' stop='1676842885248'>
+            <name>should open page</name>
+            <title>should open page</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='1-0'/>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='1-0'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='firefox-110.0'/>
+                <parameter kind='argument' name='browser' value='firefox-110.0'/>
+            </parameters>
+            <steps/>
+            <attachments/>
+        </test-case>
+        <test-case start='1676842885250' status='passed' stop='1676842886404'>
+            <name>should open modal</name>
+            <title>should open modal</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='1-0'/>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='1-0'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='firefox-110.0'/>
+                <parameter kind='argument' name='browser' value='firefox-110.0'/>
+            </parameters>
+            <steps/>
+            <attachments/>
+        </test-case>
+        <test-case start='1676842886405' status='failed' stop='1676842899484'>
+            <name>should add doctor</name>
+            <title>should add doctor</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='1-0'/>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='1-0'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='firefox-110.0'/>
+                <parameter kind='argument' name='browser' value='firefox-110.0'/>
+            </parameters>
+            <steps/>
+            <attachments/>
+            <failure>
+                <message>Expect $(`#Specialist_8`).$(`.name`) to have text containing
+                
+                Expected: "John Doe 0000"
+                Received: "Dr. John Doe"</message>
+                <stack-trace>Error: Expect $(`#Specialist_8`).$(`.name`) to have text containing
+                
+                Expected: "John Doe 0000"
+                Received: "Dr. John Doe"
+                    at Context.&lt;anonymous> (C:\Users\Mohat_Shil\Projects\js-atm-program\module-7\tests\advanced-config.test.js:32:35)
+                    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)</stack-trace>
+            </failure>
+        </test-case>
+        <test-case start='1676842899487' status='passed' stop='1676842900749'>
+            <name>should close modal</name>
+            <title>should close modal</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='1-0'/>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='1-0'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='firefox-110.0'/>
+                <parameter kind='argument' name='browser' value='firefox-110.0'/>
+            </parameters>
+            <steps/>
+            <attachments/>
+        </test-case>
+    </test-cases>
+</ns2:test-suite>
