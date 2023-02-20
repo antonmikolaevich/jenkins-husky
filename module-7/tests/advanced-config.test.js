@@ -27,7 +27,9 @@ describe('Module 7: Advanced Configuration', () => {
     await expect($('#_dialog-content')).not.toBeDisplayed();
 
     const card = await $('#Specialist_8');
-    await expect(card.$('.name')).toHaveTextContaining('John Doe');
+
+    //intentional fail to check the screenshot
+    await expect(card.$('.name')).toHaveTextContaining('John Doe 0000');
     await expect(card.$('.education')).toHaveTextContaining('Basic', {
       ignoreCase: true,
     });
