@@ -2,10 +2,10 @@ const DashboardPage = require('./dashboard.page');
 const DoctorsPage = require('./doctors.page');
 const PatientPage = require('./patient.page');
 const SchedulePage = require('./schedule.page');
-const PrefPage = require('./preferance.page')
+const PreferanceViewPage = require('./preferance.page')
 
 /**
- * @param name {'dashboard' | 'doctors' | 'patients'|'schedule' | 'prefence'}
+ * @param name {'dashboard' | 'doctors' | 'patients'|'schedule' | 'preference'}
  * @returns {DashboardPage|DoctorsPage|PatientPage|SchedulePage|PrefPage}
  */
 function page(name) {
@@ -14,7 +14,7 @@ function page(name) {
     doctors: new DoctorsPage(),
     patients: new PatientPage(),
     schedule: new SchedulePage(),
-    preference: new PrefPage()
+    preference: new PreferanceViewPage()
   };
   return items[name.toLowerCase()];
 }
@@ -24,6 +24,6 @@ module.exports = {
   DoctorsPage,
   PatientPage,
   SchedulePage,
-  PrefPage,
+  PreferanceViewPage,
   page,
 };

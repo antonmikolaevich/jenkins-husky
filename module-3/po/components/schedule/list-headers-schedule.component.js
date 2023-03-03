@@ -5,9 +5,7 @@ class ListHeaderComponentSchedule extends BaseComponent {
     super('.e-schedule-toolbar');
   }
 
-//   get addNewPatientBtn() {
-//     return this.rootEl.$('button.e-control');
-//   }
+
 
  
 }

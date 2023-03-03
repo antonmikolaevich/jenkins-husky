@@ -4,6 +4,7 @@ class CalenderView extends BaseComponent{
 
         constructor() {
           super('.e-tbar-btn-text');
+         
         }
     
         get closeBtn() {
@@ -13,13 +14,13 @@ class CalenderView extends BaseComponent{
       
     
         /**
-         * @param name {'Today' | 'Dropdown' | 'waitlist' | 'education' | 'Navigation view port'}
+         * @param name {'Dropdown'| 'Navigation view port'}
          */
         input(name) {
           const selectors = {
             drop_down: "//span[@class='e-btn-icon e-icon-down-arrow e-icons e-icon-right']",
-            wait_list: "(//div[@id='event-time'])[1]",
-            nav_view_port: "//div[@id='_nav']"
+            nav_view_port: "//div[@id='_nav']",
+            
           };
     
           return this.rootEl.$(selectors[name.toLowerCase()]);
@@ -28,17 +29,7 @@ class CalenderView extends BaseComponent{
 }
 
 
-class MonthView extends BaseComponent{
-    constructor() {
-        super('.e-footer-container');
-      }
-
-      get showTodayBtn() {
-        return this.rootEl.$("button[aria-label='Today']");
-      }
-
-}
 
 
 
-module.exports = CalenderView,MonthView;
+module.exports = CalenderView;

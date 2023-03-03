@@ -7,7 +7,7 @@ describe('Module 3: WebdriverIO Introduction', () => {
   });
 
 
-  it('should run scenario one - Doctors', async () => {
+  it('should show errors for Doctors', async () => {
     await page('dashboard').sideMenu.item('doctors').click();
     await page('doctors').doctorListHeader.addNewDoctorBtn.click();
     await page('doctors').addDoctorModal.input('name_input').setValue('John Doe');
@@ -18,7 +18,7 @@ describe('Module 3: WebdriverIO Introduction', () => {
 
   });
 
-  it('should run scenario two - Patients', async () => { 
+  it('should fill one Patient', async () => { 
     await page('dashboard').sideMenu.item('patients').click();
     await page('patients').patientListHeader.addNewPatientBtn.click();
     await page('patients').addPatientModal.input('name_input').setValue('julia mormon');
@@ -29,44 +29,16 @@ describe('Module 3: WebdriverIO Introduction', () => {
   
   });
 
-  it('should run scenario three - Schedule', async () => {
+  it('should test navbar and dropdown of Schedule', async () => {
     await page('dashboard').sideMenu.item('schedule').click();
-    // await page('schedule').calenderView.input('drop_down').click();
-    // await page('schedule').calenderView.input('show_today').click();
-    // const schedule = await $('div.sidebar-item.calendar');
-    // await page('schedule').monthView.showTodayBtn.click();
-
-    const showToday = await $("button[aria-label='Today']");
-    const dropDown = await $("//span[@class='e-btn-icon e-icon-down-arrow e-icons e-icon-right']");
-    const waitList = await $("(//div[@id='event-time'])[1]");
-    const navViewPort = await $("//div[@id='_nav']");
-
-    // await schedule.click();
-
-    // xpath
-    dropDown.click();
-
-    // css
-    showToday.click();
-
-    // assertion to check if waiting list event time has an ID
-    await expect(waitList).toHaveId('event-time');
-
-    // assertion to check navigation bar is visible in view port
-    await expect(navViewPort).toBeDisplayedInViewport();
+    await page('schedule').calenderView.input('drop_down').click()
+    await expect(await page('schedule').calenderView.input('nav_view_port')).toBeDisplayedInViewport();
   });
 
-  it('should run scenario four - Preferance', async () => {
+  it('should check visisble Preferance', async () => {
   
     await page('dashboard').sideMenu.item('preference').click();
-   
-
-    // assertion to check if week is visible
-    const defaultView = await $("(//span[@role='listbox'])[1]");
-    await expect(defaultView).toBeDisplayed();
-
-    // first of the month should be Monday
-    const firstDayOfMonthDropDown = await $('#FirstDayOfWeek');
-    await expect(firstDayOfMonthDropDown).toBeClickable();
+    await page('preference').preferanceView.input('first_day_of_week').click();
+    await expect(await page('preference').preferanceView.input('first_day_of_week')).toBeClickable();
   });
 });

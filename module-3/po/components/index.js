@@ -5,8 +5,7 @@ const DoctorListHeader = require('./doctors/list_header.comp')
 const AddPatientModal = require('./patients/add-patient-modal.comp')
 const PatientListHeader = require('./patients/list_header_patient.comp')
 const CalenderView = require('./schedule/locators-schedule.comp')
-const MonthView = require('./schedule/locators-schedule.comp')
-const Settings = require('./preference/settings-pref.comp')
+const PreferanceView = require('./preference/settings-preferance.comp')
 
 module.exports = {
     Header,
@@ -16,8 +15,7 @@ module.exports = {
     AddPatientModal,
     PatientListHeader,
     CalenderView,
-    MonthView,
-    Settings
+    PreferanceView
 
   
   

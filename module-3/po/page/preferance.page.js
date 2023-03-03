@@ -1,12 +1,12 @@
 const BasePage = require('./base.page');
-const { Settings } = require('../components');
+const { PreferanceView } = require('../components');
 
 
-class PrefPage extends BasePage {
+class PreferanceViewPage extends BasePage {
   constructor() {
     super('/showcase/angular/appointmentplanner/#/preference');
-    this.settings = new Settings();
+    this.preferanceView = new PreferanceView();
   }
 }
 
-module.exports = PrefPage;
+module.exports = PreferanceViewPage;
