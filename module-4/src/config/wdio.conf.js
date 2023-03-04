@@ -28,7 +28,7 @@ exports.config = {
     ],
     // Patterns to exclude.
     exclude: [
-        // 'path/to/excluded/files'
+        '../tests/basic-commands.test.js'
     ],
     //
     // ============

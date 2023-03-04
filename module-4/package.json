@@ -19,6 +19,7 @@
   },
   "dependencies": {
     "@cucumber/cucumber": "^9.0.0",
+    "mod1": "file:",
     "wdio": "^6.0.1"
   }
 }
