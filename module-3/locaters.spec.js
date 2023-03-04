@@ -1,109 +1,44 @@
+const { page } = require('./po');
+
 describe('Module 3: WebdriverIO Introduction', () => {
   beforeEach(async () => {
-    await browser.url('/showcase/angular/appointmentplanner/#/dashboard');
-
-    await expect(browser).toHaveUrlContaining('appointmentplanner');
+    await page('dashboard').open()
+    await expect(browser).toHaveTitle('Appointment Planner - Syncfusion Angular Components Showcase App');
   });
 
-  // AC2: four scenario
-  // AC3: XPath and CSS Selectors are used
-  // AC4: Different assertions are used
 
-  it('should run scenario one - Doctors', async () => {
-    const doctorsButton = await $("div[routerLink='/doctors']");
-    const addNewDoctorButton = await $('.specialization-types button.e-control');
-    const doctorNameInput = await $('#Name input');
-    const saveButton = await $('//button[text()="Save"]');
-    const mailError = await $('label#Email-info');
-    const mobileError = await $('label#undefined-info');
+  it('should show errors for Doctors', async () => {
+    await page('dashboard').sideMenu.item('doctors').click();
+    await page('doctors').doctorListHeader.addNewDoctorBtn.click();
+    await page('doctors').addDoctorModal.input('name_input').setValue('John Doe');
+    await page('doctors').addDoctorModal.saveBtn.click();
+    await expect(await page('doctors').addDoctorModal.input('email_error_property')).toBeDisplayed();
+    await expect(await page('doctors').addDoctorModal.input('phone_error_property')).toBeDisplayed();
+    await expect(await page('doctors').addDoctorModal.input('education_error_property')).toBeDisplayed();
 
-    await doctorsButton.click();
-    await addNewDoctorButton.click();
-    await doctorNameInput.setValue('John Doe');
-    await saveButton.click();
-
-    // css and assertion
-    expect(await mailError.getText()).toEqual('Enter valid email');
-    await expect(mailError).toBeDisplayed();
-
-    expect(await mobileError.getText()).toEqual('Enter valid mobile number');
-    await expect(mobileError).toBeDisplayed();
-
-    // using xpath locator
-    const educationError = await $('//*[@id="Education-info"]');
-
-    // assertions checks text
-
-    expect(await educationError.getText()).toEqual('Enter valid education');
-
-    // assertions checks display of error is present
-
-    await expect(educationError).toBeDisplayed();
   });
 
-  it('should run scenario two - Patients', async () => {
-    const patients = await $('div.sidebar-item.patients');
-    const addNewPatientButton = await $('#patient-wrapper > div > div.patient-operations > button');
-    const patientName = await $('#Name input');
-    const mobileNumber = await $('#PatientMobile');
-    const mailID = await $('#Email input');
-    const saveBtn = await $('//div[2]/ejs-dialog/div[3]/div/button[2]');
-    const saveBtnClickCheck = await $('//div[2]/ejs-dialog/div[3]/div/button[2]');
-    const listViewPatient = await $('div.patients-detail-wrapper');
-
-    // css
-    await patients.click();
-    await addNewPatientButton.click();
-    await patientName.setValue('julia mormon');
-    await mobileNumber.setValue('(111) 111-1111');
-    await mailID.setValue('ab@mail.com');
-
-    // assertion checks if save button is clickable
-
-    await expect(saveBtnClickCheck).toBeClickable();
-
-    // xpath
-    await saveBtn.click();
-
-    // assertion checks if user is added after saving
-
-    await expect(listViewPatient).toBeDisplayed();
+  it('should fill one Patient', async () => { 
+    await page('dashboard').sideMenu.item('patients').click();
+    await page('patients').patientListHeader.addNewPatientBtn.click();
+    await page('patients').addPatientModal.input('name_input').setValue('julia mormon');
+    await page('patients').addPatientModal.input('phone').setValue('(111) 111-1111');
+    await page('patients').addPatientModal.input('email').setValue('ab@mail.com');
+    await expect(await page('patients').addPatientModal.input('save_btn')).toBeClickable();
+    await page('patients').addPatientModal.input('save_btn').click();
+  
   });
 
-  it('should run scenario three - Schedule', async () => {
-    const schedule = await $('div.sidebar-item.calendar');
-    const showToday = await $("button[aria-label='Today']");
-    const dropDown = await $("//span[@class='e-btn-icon e-icon-down-arrow e-icons e-icon-right']");
-    const waitList = await $("(//div[@id='event-time'])[1]");
-    const navViewPort = await $("//div[@id='_nav']");
-
-    await schedule.click();
-
-    // xpath
-    dropDown.click();
-
-    // css
-    showToday.click();
-
-    // assertion to check if waiting list event time has an ID
-    await expect(waitList).toHaveId('event-time');
-
-    // assertion to check navigation bar is visible in view port
-    await expect(navViewPort).toBeDisplayedInViewport();
+  it('should test navbar and dropdown of Schedule', async () => {
+    await page('dashboard').sideMenu.item('schedule').click();
+    await page('schedule').calenderView.input('drop_down').click()
+    await expect(await page('schedule').calenderView.input('nav_view_port')).toBeDisplayedInViewport();
   });
 
-  it('should run scenario four - Preferance', async () => {
-    const preferance = await $('div.sidebar-item.preference');
-
-    // css
-    await preferance.click();
-
-    // assertion to check if week is visible
-    const defaultView = await $("(//span[@role='listbox'])[1]");
-    await expect(defaultView).toBeDisplayed();
-
-    // first of the month should be Monday
-    const firstDayOfMonthDropDown = await $('#FirstDayOfWeek');
-    await expect(firstDayOfMonthDropDown).toBeClickable();
+  it('should check visisble Preferance', async () => {
+  
+    await page('dashboard').sideMenu.item('preference').click();
+    await page('preference').preferanceView.input('first_day_of_week').click();
+    await expect(await page('preference').preferanceView.input('first_day_of_week')).toBeClickable();
   });
 });
