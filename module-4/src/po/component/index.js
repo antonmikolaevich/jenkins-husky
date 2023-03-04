@@ -9,7 +9,7 @@ const PatientListHeader = require('./patients/list-header-patient.comp')
 const DetailPatientComponent = require('./patients/detail-view-patients.comp')
 const CalenderView = require('./schedule/selectors-schedule.comp')
 const ListHeaderComponentSchedule = require('./schedule/list-header-schedule.comp')
-const PreferanceView = require('../component/preference/pref-settings.comp')
+const PreferanceView = require('./preference/pref-settings.comp')
 
 module.exports = {
     Header,

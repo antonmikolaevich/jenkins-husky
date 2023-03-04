@@ -1,4 +1,4 @@
-const { page } = require('./po');
+const { page } = require('../po');
 
 describe('Module 4 using all the basic commands',()=>{
 
