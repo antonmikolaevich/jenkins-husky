@@ -12,6 +12,17 @@ const BaseComponent = require('../common/base.comp');
     get saveBtn() {
       return this.rootEl.$('.button-container button.e-primary');
     }
+    
+       /**
+   * @param button {'save' | 'close'}
+   */
+   async clickButton(button) {
+    if (button.toLocaleLowerCase() === 'save') {
+      await this.saveBtn.click();
+    } else {
+      await this.closeBtn.click();
+    }
+  }
 
     /**
      * @param name {'name' | 'phone' | 'email' | 'education' | 'list view'}
