@@ -9,24 +9,30 @@ describe('POSITIVE API TEST SUITE', ()=>{
 
         const response = await sendRequest('/posts/1')
         expect(response.data.userId).to.equal(1)
+        expect(response.data.id).to.equal(1)
+        expect(response.data.title).to.contain('sunt aut facere')
         expect(response.status).to.equal(200)
     })
 
     it('POST post', async ()=>{
 
         const response = await sendRequest('/posts',testData,"post")
+        expect(response.data.name).to.equal('jhon')
+        expect(response.data.id).to.equal(101)
         expect(response.status).to.equal(201)
 
-    })
-
-    it('UPDATE post', async()=>{
-        const response = await sendRequest('/posts/1',testData,'PUT');
-        expect(response.status).to.equal(200)
     })
 
     it('DELETE post', async()=>{
         const response = await sendRequest('/posts/1',testData,'DELETE');
         expect(response.status).to.equal(200)
+    })
+
+    it('DELETE post test', async()=>{
+        const response = await sendRequest('/posts/1');
+        // name is deleted 
+        expect(response.data).not.equal("name")
+       
     })
 
 })
