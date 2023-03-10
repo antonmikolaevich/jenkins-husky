@@ -1,4 +1,4 @@
-const Test_url = 'https://jsonplaceholder.typicode.com';
+const TestUrl = 'https://jsonplaceholder.typicode.com';
 
-module.exports = Test_url;
+module.exports = TestUrl;
 
