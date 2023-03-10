@@ -18,3 +18,19 @@ Scenario: Dashboard page should have "Appointment Planner - Syncfusion Angular C
     Then I set value for patients phone
     Then I set value for patients email
     Then I click on save button
+
+
+ Scenario: It should be possible to open schedule page
+    Given  I open "Dashboard" page
+    When I click "Schedule" link from the side menu
+    And I click on todays calender view
+    Then I make sure calender is visible on the viewport
+
+
+ Scenario: It should be possible to open Preferance page
+    Given  I open "Dashboard" page
+    When I click "Preference" link from the side menu
+    And I click on first day of the week
+    Then I make sure first day of the week is clickable
+
+  

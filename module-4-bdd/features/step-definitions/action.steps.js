@@ -41,6 +41,28 @@ Given('I open {string} page', function (pageName) {
     return page('patients').addPatientModal.input('save_btn').click();
   });
 
+  When(/^I click on todays calender view$/, function () {
+    return page('schedule').calenderView.input('drop_down').click()
+  });
+
+  When(/^I make sure calender is visible on the viewport$/, function () {
+    return expect(page('schedule').calenderView.input('nav_view_port')).toBeDisplayedInViewport();
+  });
+
+  When(/^I click on first day of the week$/, function () {
+    return page('preference').preferanceView.input('first_day_of_week').click();
+  });
+
+  When(/^I make sure first day of the week is clickable$/, function () {
+    return expect( page('preference').preferanceView.input('first_day_of_week')).toBeClickable();
+  });
+
+  
+
+
+
+
+  
  
 
 
