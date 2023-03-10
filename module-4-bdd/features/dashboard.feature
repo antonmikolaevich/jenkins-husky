@@ -1,6 +1,6 @@
 Feature: Dashboard
 
-  Scenario: Dashboard page should have "Appointment Planner - Syncfusion Angular Components Showcase App" title
+Scenario: Dashboard page should have "Appointment Planner - Syncfusion Angular Components Showcase App" title
     When I open "Dashboard" page
     Then Page title should "be equal to" "Appointment Planner - Syncfusion Angular Components Showcase App"
 
@@ -15,5 +15,6 @@ Feature: Dashboard
     When I click "Patients" link from the side menu
     And I click add new patient button from list header
     Then I set value patients name
-
-
+    Then I set value for patients phone
+    Then I set value for patients email
+    Then I click on save button
