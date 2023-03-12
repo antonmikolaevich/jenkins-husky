@@ -5,15 +5,11 @@ pipeline {
 
     stage('Navigation'){
       steps{
-        dir("module-3") 
-      }
-    }
-
-    stage('Build'){
-        steps {
-            bat 'npm install'
+        dir('module-3') {
+          bat 'npm install'
         }
-    }   
+      }
+    } 
             
     stage('Test') {
       steps {
