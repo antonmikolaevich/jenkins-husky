@@ -7,10 +7,18 @@ pipeline {
       steps{
         dir('module-3') {
           bat 'npm install'
-          bat 'npm run test'
         }
       }
     } 
+            
+    stage('Test') {
+      steps {
+        dir('module-3'){
+        bat 'npm run test'
+        }
+      }
+    }
+  }
    post {
       always {
         junit allowEmptyResults: true, testResults: '*.xml'
