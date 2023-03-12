@@ -5,7 +5,7 @@ pipeline {
 
     stage('Navigation'){
       steps{
-        bat 'cd module-3'
+        cd 'module-3'
       }
     }
 
