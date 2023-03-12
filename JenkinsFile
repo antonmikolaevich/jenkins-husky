@@ -1,24 +1,23 @@
 pipeline {
   agent any
+  
   stages {
-
      stage('NavtoFolder'){
       steps {
-        sh 'cd module-3'
+        bat 'cd module-3'
       }
      }
 
     stage('Build') {
       steps {
-          sh 'npm install'
-          sh 'npm i wdio'
+          bat 'npm install'
+          bat 'npm i wdio'
       }
     }
+
     stage('Test') {
       steps {
-        {
-          sh 'npm test'
-        }
+          bat 'npm test'
       }
     }
   }
@@ -28,6 +27,4 @@ pipeline {
           junit 'reports/*.xml'
         }
       }
-    
-  
 }
