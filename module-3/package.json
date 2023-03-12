@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "wdio run ./wdio.conf.js",
-    "prepare": "husky install"
+    "prepare": "cd .. && husky install .husky"
   },
   "keywords": [],
   "author": "mohat",
@@ -19,6 +19,7 @@
     "wdio-chromedriver-service": "^8.1.1"
   },
   "dependencies": {
+    "husky": "^8.0.3",
     "wdio": "^6.0.1"
   }
 }
