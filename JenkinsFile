@@ -5,9 +5,7 @@ pipeline {
 
     stage('Navigation'){
       steps{
-        dir("folder") {
-            bat "module-3"
-}
+        dir("module-3") 
       }
     }
 
