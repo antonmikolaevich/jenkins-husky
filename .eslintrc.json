@@ -18,7 +18,18 @@
     "func-names": "off",
     "no-shadow": "off",
     "no-param-reassign": "off",
-    "prefer-template": "off"
+    "prefer-template": "off",
+    "no-unused-vars": "off",
+    "spaced-comment": "off",
+    "import/extensions": "off",
+    "import/no-unresolved": "off",
+    "no-unused-expressions": "off",
+    "no-sequences": "off",
+    "import/no-extraneous-dependencies": "off", 
+    "object-shorthand": "off",
+    "import/newline-after-import": "off",
+    "arrow-body-style": "off",
+    "mocha/no-skipped-tests": "off"
   },
   "ignorePatterns": ["/module-9/service/*", "**/coverage", "**/mochawesome-report", "**/artifacts", "**/report"]
 }

@@ -1,7 +1,6 @@
 {
-    "title": "foo",
-    "body": "bar",
-    "userId": 1,
-    "name": "test"
-
+  "title": "foo",
+  "body": "bar",
+  "userId": 1,
+  "name": "test"
 }

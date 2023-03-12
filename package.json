@@ -1,6 +1,6 @@
 {
   "name": "js-atm-program",
-  "type":"module",
+  "type": "module",
   "version": "1.0.0",
   "description": "Automated Testing (JavaScript) Mentoring program [Basic]",
   "license": "CATOSL-1.1",
@@ -12,7 +12,6 @@
     "check-lint": "eslint . --ext js",
     "check-all": "npm run check-format && npm run check-lint",
     "coverage": "c8 npm test"
-
   },
   "dependencies": {
     "@wdio/cli": "^8.3.5",

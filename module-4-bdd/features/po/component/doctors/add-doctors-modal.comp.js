@@ -13,18 +13,16 @@ class AddDoctorComponent extends BaseComponent {
     return this.rootEl.$('.button-container button.e-primary');
   }
 
-
-   /**
+  /**
    * @param button {'save' | 'close'}
    */
-   async clickButton(button) {
+  async clickButton(button) {
     if (button.toLocaleLowerCase() === 'save') {
       await this.saveBtn.click();
     } else {
       await this.closeBtn.click();
     }
   }
-
 
   /**
    * @param name {'name' | 'phone' | 'email' | 'education' | 'designation'}
@@ -35,13 +33,10 @@ class AddDoctorComponent extends BaseComponent {
       phone_error_property: 'input#DoctorMobile',
       email_error_property: 'input[name="Email"]',
       education_error_property: 'input[name="Education"]',
-      
     };
 
     return this.rootEl.$(selectors[name.toLowerCase()]);
   }
-
-  
 }
 
 module.exports = AddDoctorComponent;

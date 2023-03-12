@@ -8,8 +8,6 @@ class ListHeaderComponentPatient extends BaseComponent {
   get addNewPatientBtn() {
     return this.rootEl.$('button.e-control');
   }
-
- 
 }
 
 module.exports = ListHeaderComponentPatient;

@@ -2,7 +2,7 @@ const DashboardPage = require('./dashboard.page');
 const DoctorsPage = require('./doctors.page');
 const PatientPage = require('./patients.page');
 const SchedulePage = require('./schedule.page');
-const PreferanceViewPage = require('./preference.page')
+const PreferanceViewPage = require('./preference.page');
 
 /**
  * @param name {'dashboard' | 'doctors' | 'patients'|'schedule' | 'preference'}
@@ -14,7 +14,7 @@ function page(name) {
     doctors: new DoctorsPage(),
     patients: new PatientPage(),
     schedule: new SchedulePage(),
-    preference: new PreferanceViewPage()
+    preference: new PreferanceViewPage(),
   };
   return items[name.toLowerCase()];
 }

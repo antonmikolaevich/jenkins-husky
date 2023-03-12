@@ -22,13 +22,10 @@ class AddDoctorComponent extends BaseComponent {
       phone_error_property: 'input#DoctorMobile',
       email_error_property: 'input[name="Email"]',
       education_error_property: 'input[name="Education"]',
-      
     };
 
     return this.rootEl.$(selectors[name.toLowerCase()]);
   }
-
-  
 }
 
 module.exports = AddDoctorComponent;

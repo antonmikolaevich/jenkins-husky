@@ -1,5 +1,5 @@
 const BasePage = require('./base.page');
-const { AddDoctorModal, DoctorListHeader} = require('../components');
+const { AddDoctorModal, DoctorListHeader } = require('../components');
 
 class DoctorsPage extends BasePage {
   constructor() {
@@ -7,8 +7,6 @@ class DoctorsPage extends BasePage {
     this.addDoctorModal = new AddDoctorModal();
     this.doctorListHeader = new DoctorListHeader();
   }
-
-
 }
 
 module.exports = DoctorsPage;

@@ -1,5 +1,5 @@
 const BasePage = require('./base.page');
-const { AddDoctorModal, DoctorListHeader, SpecialDoc, RandomDaySpecialDoc} = require('../component');
+const { AddDoctorModal, DoctorListHeader, SpecialDoc, RandomDaySpecialDoc } = require('../component');
 
 class DoctorsPage extends BasePage {
   constructor() {
@@ -9,8 +9,6 @@ class DoctorsPage extends BasePage {
     this.specialDoc = new SpecialDoc();
     this.randomDay = new RandomDaySpecialDoc();
   }
-
-
 }
 
 module.exports = DoctorsPage;

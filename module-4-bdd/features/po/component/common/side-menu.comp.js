@@ -1,4 +1,4 @@
-const BaseComponent = require('./base.comp')
+const BaseComponent = require('./base.comp');
 
 class SideMenuComponent extends BaseComponent {
   constructor() {
@@ -12,14 +12,14 @@ class SideMenuComponent extends BaseComponent {
   /**
    * @param name {'dashboard' | 'schedule' | 'doctors' | 'patient'}
    */
-  
+
   item(name) {
     const selectors = {
       dashboard: '[routerlink="/dashboard"]',
       schedule: '[routerlink="/calendar"]',
       doctors: '[routerlink="/doctors"]',
       patients: '[routerlink="/patients"]',
-      preference: '[routerlink="/preference"]'
+      preference: '[routerlink="/preference"]',
     };
     return this.rootEl.$(selectors[name.toLowerCase()]);
   }

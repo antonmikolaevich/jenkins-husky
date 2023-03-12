@@ -14,11 +14,10 @@ describe('getEvenNumbersFromArray', function () {
     expect(validator.getEvenNumbersFromArray(arrayOfRandomNumbers)).to.be.eql([2, 12, 32, 10]);
   });
 
-  it('should return error for array of number',()=>{
-    const arrayValue = [10,'20',30];
-    expect(()=>{
+  it('should return error for array of number', () => {
+    const arrayValue = [10, '20', 30];
+    expect(() => {
       validator.getEvenNumbersFromArray(arrayValue);
-    }).to.throw('[10,20,30] is not an array of "Numbers"')
+    }).to.throw('[10,20,30] is not an array of "Numbers"');
   });
-
 });

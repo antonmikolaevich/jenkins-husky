@@ -20,5 +20,7 @@
   "mocha": {
     "spec": "tests/**/*.test.js"
   },
-  "reporter": ["mochawesome"]
+  "reporter": [
+    "mochawesome"
+  ]
 }

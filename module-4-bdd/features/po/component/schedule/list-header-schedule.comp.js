@@ -4,7 +4,6 @@ class ListHeaderComponentSchedule extends BaseComponent {
   constructor() {
     super('.e-schedule-toolbar');
   }
- 
 }
 
 module.exports = ListHeaderComponentSchedule;
