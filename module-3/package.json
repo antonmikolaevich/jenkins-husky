@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "wdio run ./wdio.conf.js",
-    "prepare": "cd .. && husky install .husky"
+    "prepare": "cd .. && husky install"
   },
   "keywords": [],
   "author": "mohat",
