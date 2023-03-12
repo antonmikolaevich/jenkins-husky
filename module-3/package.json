@@ -4,7 +4,8 @@
   "description": "Module-3: WebdriverIO. Locators",
   "main": "index.js",
   "scripts": {
-    "test": "wdio run ./wdio.conf.js"
+    "test": "wdio run ./wdio.conf.js",
+    "prepare": "husky install"
   },
   "keywords": [],
   "author": "mohat",
