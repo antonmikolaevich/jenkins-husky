@@ -1,4 +1,5 @@
 const { page } = require('./po');
+const a = require('../.husky');
 
 describe('Module 3: WebdriverIO Introduction', () => {
   beforeEach(async () => {
