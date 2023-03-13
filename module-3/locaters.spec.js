@@ -1,6 +1,5 @@
 const { page } = require('./po');
 
-
 describe('Module 3: WebdriverIO Introduction', () => {
   beforeEach(async () => {
     await page('dashboard').open();
